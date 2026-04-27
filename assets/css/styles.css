@@ -471,49 +471,58 @@ p  { margin: 0; }
 }
 .ex-illo .num-bg span { display: block; transform: translateY(8%); }
 
-/* Top-left mono code label */
+/* Top-left mono code label — accent dot now lives INSIDE the code so it
+   can never collide with the descriptor row at the bottom. */
 .ex-illo .code {
-  position: absolute; top: 18px; left: 22px;
+  position: absolute; top: 16px; left: 18px;
+  display: inline-flex; align-items: center; gap: 8px;
+  max-width: calc(100% - 84px);     /* always leave room for top-right icon */
   font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600;
-  letter-spacing: .22em; text-transform: uppercase;
+  letter-spacing: .18em; text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(0,0,0,.32); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 2;
 }
 .ex-illo .code .dash { opacity: .55; margin: 0 6px; }
 
-/* Bottom-left descriptor */
+/* Bottom descriptor — single line, ellipsis on overflow */
 .ex-illo .descriptor {
-  position: absolute; bottom: 18px; left: 22px; right: 22px;
-  display: flex; justify-content: space-between; align-items: end;
+  position: absolute; bottom: 14px; left: 18px; right: 18px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
   font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 500;
-  letter-spacing: .18em; text-transform: uppercase;
+  letter-spacing: .14em; text-transform: uppercase;
   z-index: 2;
-  padding-top: 14px;
+  padding: 8px 12px; border-radius: 8px;
+  background: rgba(0,0,0,.32); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
-.ex-illo .descriptor::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
-  background: currentColor; opacity: .25;
+.ex-illo .descriptor span {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  min-width: 0;
 }
+.ex-illo .descriptor span:last-child { text-align: right; }
 
 /* Top-right precision icon */
 .ex-illo .icon-mark {
-  position: absolute; top: 18px; right: 22px;
+  position: absolute; top: 16px; right: 18px;
   width: 42px; height: 42px;
+  padding: 9px; border-radius: 10px;
+  background: rgba(0,0,0,.32); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 2;
 }
 .ex-illo .icon-mark svg { width: 100%; height: 100%; display: block; stroke-linecap: round; stroke-linejoin: round; fill: none; }
 
-/* Single accent dot bottom-right (live status) */
+/* Accent dot now leads the code label — guaranteed never to collide */
 .ex-illo .accent-dot {
-  position: absolute; bottom: 22px; right: 22px;
-  width: 8px; height: 8px; border-radius: 999px; z-index: 2;
+  width: 6px; height: 6px; border-radius: 999px;
+  flex-shrink: 0;
   animation: pulse 1.6s ease-in-out infinite;
 }
-
-/* Subtle vertical hairline left side — masthead/edition feel */
-.ex-illo::after {
-  content: ""; position: absolute; left: 16px; top: 50%; bottom: 22%;
-  width: 1px; background: currentColor; opacity: .12; z-index: 3;
-}
+.ex-illo::after { content: none; } /* removed the vertical hairline */
 
 /* Ambient looping video sits BEHIND the numeral, tinted to match the gradient.
    mix-blend-mode preserves the gradient color while letting motion through. */
