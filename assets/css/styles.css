@@ -424,7 +424,7 @@ p  { margin: 0; }
 .ind-examples .ind-ex:hover .ex-media video,
 .ind-examples .ind-ex:hover .ex-media img { transform: scale(1.06); filter: grayscale(40%) contrast(112%) brightness(.85); }
 
-/* Video thumbnail at top of each industry card */
+/* Industry illustration plate at top of each card — bespoke gradient + SVG */
 .ind-ex .ex-media {
   position: relative; aspect-ratio: 16 / 9; overflow: hidden;
   background: var(--ink);
@@ -438,8 +438,83 @@ p  { margin: 0; }
 }
 .ind-ex .ex-media::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(17,17,17,.15) 0%, rgba(17,17,17,.7) 100%);
+  background: linear-gradient(180deg, rgba(17,17,17,.15) 0%, rgba(17,17,17,.5) 100%);
 }
+
+/* Gradient backgrounds + decorative SVG per industry */
+.ex-illo {
+  position: absolute; inset: 0; overflow: hidden;
+  display: grid; place-items: center;
+  z-index: 0;
+}
+.ex-illo svg.deco-illo {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+  z-index: 1;
+}
+
+/* 01 Emergency — burning amber + deep slate, copper-warm */
+.ex-illo--emergency {
+  background:
+    radial-gradient(ellipse at 75% 30%, rgba(255,180,90,.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(220,80,40,.30) 0%, transparent 60%),
+    linear-gradient(135deg, #1A2436 0%, #2C2018 60%, #44291A 100%);
+}
+.ex-illo--emergency .deco-illo .stroke { stroke: rgba(255,200,140,.85); fill: none; stroke-width: 1.5; stroke-linecap: round; }
+.ex-illo--emergency .deco-illo .accent { fill: #FFB766; }
+.ex-illo--emergency .deco-illo .ring { stroke: rgba(255,180,90,.5); fill: none; stroke-width: 1; }
+.ex-illo--emergency .deco-illo .ring.r2 { animation: ring-emerg 3s ease-out infinite .6s; }
+.ex-illo--emergency .deco-illo .ring.r3 { animation: ring-emerg 3s ease-out infinite 1.2s; }
+.ex-illo--emergency .deco-illo .ring.r1 { animation: ring-emerg 3s ease-out infinite; }
+@keyframes ring-emerg { 0% { opacity: 0; transform: scale(.7); } 30% { opacity: 1; } 100% { opacity: 0; transform: scale(1.5); } }
+.ex-illo--emergency .deco-illo .pipe { stroke: rgba(255,210,160,.95); fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.ex-illo--emergency .deco-illo .drop { fill: #FFC78A; transform-origin: center; transform-box: fill-box; animation: drop 2.4s ease-in infinite; }
+@keyframes drop { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(60px); opacity: 1; } 71% { opacity: 0; transform: translateY(60px); } 100% { transform: translateY(0); opacity: 0; } }
+
+/* 02 Property — slate-blue with cool warmth */
+.ex-illo--property {
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(160,200,255,.30) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 100%, rgba(100,140,200,.20) 0%, transparent 60%),
+    linear-gradient(135deg, #1B2940 0%, #243553 50%, #1F3258 100%);
+}
+.ex-illo--property .deco-illo .stroke { stroke: rgba(190,215,255,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; }
+.ex-illo--property .deco-illo .fill-soft { fill: rgba(170,200,250,.18); }
+.ex-illo--property .deco-illo .fill-light { fill: rgba(200,220,255,.45); }
+.ex-illo--property .deco-illo .window-on { fill: #FFD580; opacity: .9; }
+.ex-illo--property .deco-illo .window-on.w2 { animation: blink-win 4s ease-in-out infinite 1s; }
+.ex-illo--property .deco-illo .window-on.w3 { animation: blink-win 4s ease-in-out infinite 2.2s; }
+@keyframes blink-win { 0%, 60%, 100% { opacity: .9; } 70% { opacity: .2; } }
+
+/* 03 Moving — soft warm earth + cream */
+.ex-illo--moving {
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(255,200,140,.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 85%, rgba(200,140,90,.22) 0%, transparent 60%),
+    linear-gradient(135deg, #2A2017 0%, #36281C 50%, #3F2A1B 100%);
+}
+.ex-illo--moving .deco-illo .stroke { stroke: rgba(255,220,180,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; }
+.ex-illo--moving .deco-illo .fill-warm { fill: rgba(220,170,120,.5); }
+.ex-illo--moving .deco-illo .fill-tape { fill: rgba(200,140,80,.7); }
+.ex-illo--moving .deco-illo .truck-body { fill: rgba(245,210,160,.85); }
+.ex-illo--moving .deco-illo .truck-cab { fill: rgba(220,170,120,.95); }
+.ex-illo--moving .deco-illo .arrow-trail { stroke: rgba(255,210,160,.6); stroke-dasharray: 4 6; stroke-width: 1.5; fill: none; }
+.ex-illo--moving .deco-illo .truck { animation: truck-move 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes truck-move { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+
+/* 04 Financial — deep navy + champagne accent */
+.ex-illo--financial {
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(220,180,130,.22) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 85%, rgba(80,110,170,.25) 0%, transparent 60%),
+    linear-gradient(135deg, #0F1A2E 0%, #15213A 50%, #1A2845 100%);
+}
+.ex-illo--financial .deco-illo .stroke { stroke: rgba(220,190,150,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.ex-illo--financial .deco-illo .stroke-soft { stroke: rgba(180,200,230,.45); fill: none; stroke-width: 1; }
+.ex-illo--financial .deco-illo .bar { fill: rgba(220,190,150,.85); }
+.ex-illo--financial .deco-illo .bar.tall { fill: rgba(245,215,170,.95); }
+.ex-illo--financial .deco-illo .dot { fill: #DCBE96; }
+.ex-illo--financial .deco-illo .grid-line { stroke: rgba(180,200,230,.15); stroke-width: 1; fill: none; }
+.ex-illo--financial .deco-illo .trend { stroke: #DCBE96; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 0; }
 .ind-ex .ex-media .ex-tag {
   position: absolute; top: 16px; left: 16px; z-index: 2;
   display: inline-flex; align-items: center; gap: 8px;
