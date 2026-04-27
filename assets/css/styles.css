@@ -452,69 +452,113 @@ p  { margin: 0; }
   z-index: 1;
 }
 
-/* 01 Emergency — burning amber + deep slate, copper-warm */
+/* Editorial illustration system — Pentagram-style minimal: single huge
+   italic Roman numeral on a sophisticated gradient + one precise icon.
+   Restrained. Institutional. No cartoons. */
+
+.ex-illo {
+  position: absolute; inset: 0; overflow: hidden;
+  z-index: 0;
+}
+.ex-illo .num-bg {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: 'Instrument Serif', 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(180px, 30vw, 320px);
+  line-height: 1; letter-spacing: -0.02em;
+  font-weight: 400;
+  pointer-events: none;
+  z-index: 0;
+}
+.ex-illo .num-bg span { display: block; transform: translateY(8%); }
+
+/* Top-left mono code label */
+.ex-illo .code {
+  position: absolute; top: 18px; left: 22px;
+  font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase;
+  z-index: 2;
+}
+.ex-illo .code .dash { opacity: .55; margin: 0 6px; }
+
+/* Bottom-left descriptor */
+.ex-illo .descriptor {
+  position: absolute; bottom: 18px; left: 22px; right: 22px;
+  display: flex; justify-content: space-between; align-items: end;
+  font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  z-index: 2;
+  padding-top: 14px;
+}
+.ex-illo .descriptor::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
+  background: currentColor; opacity: .25;
+}
+
+/* Top-right precision icon */
+.ex-illo .icon-mark {
+  position: absolute; top: 18px; right: 22px;
+  width: 42px; height: 42px;
+  z-index: 2;
+}
+.ex-illo .icon-mark svg { width: 100%; height: 100%; display: block; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+/* Single accent dot bottom-right (live status) */
+.ex-illo .accent-dot {
+  position: absolute; bottom: 22px; right: 22px;
+  width: 8px; height: 8px; border-radius: 999px; z-index: 2;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Subtle vertical hairline left side — masthead/edition feel */
+.ex-illo::after {
+  content: ""; position: absolute; left: 16px; top: 50%; bottom: 22%;
+  width: 1px; background: currentColor; opacity: .12; z-index: 1;
+}
+
+/* 01 Emergency — refined deep slate with subtle ember warmth */
 .ex-illo--emergency {
   background:
-    radial-gradient(ellipse at 75% 30%, rgba(255,180,90,.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(220,80,40,.30) 0%, transparent 60%),
-    linear-gradient(135deg, #1A2436 0%, #2C2018 60%, #44291A 100%);
+    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(255,170,100,.18) 0%, transparent 60%),
+    linear-gradient(160deg, #1A1F2C 0%, #1F2230 45%, #2A1F1F 100%);
+  color: #F5E6D3;
 }
-.ex-illo--emergency .deco-illo .stroke { stroke: rgba(255,200,140,.85); fill: none; stroke-width: 1.5; stroke-linecap: round; }
-.ex-illo--emergency .deco-illo .accent { fill: #FFB766; }
-.ex-illo--emergency .deco-illo .ring { stroke: rgba(255,180,90,.5); fill: none; stroke-width: 1; }
-.ex-illo--emergency .deco-illo .ring.r2 { animation: ring-emerg 3s ease-out infinite .6s; }
-.ex-illo--emergency .deco-illo .ring.r3 { animation: ring-emerg 3s ease-out infinite 1.2s; }
-.ex-illo--emergency .deco-illo .ring.r1 { animation: ring-emerg 3s ease-out infinite; }
-@keyframes ring-emerg { 0% { opacity: 0; transform: scale(.7); } 30% { opacity: 1; } 100% { opacity: 0; transform: scale(1.5); } }
-.ex-illo--emergency .deco-illo .pipe { stroke: rgba(255,210,160,.95); fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
-.ex-illo--emergency .deco-illo .drop { fill: #FFC78A; transform-origin: center; transform-box: fill-box; animation: drop 2.4s ease-in infinite; }
-@keyframes drop { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(60px); opacity: 1; } 71% { opacity: 0; transform: translateY(60px); } 100% { transform: translateY(0); opacity: 0; } }
+.ex-illo--emergency .num-bg { color: rgba(255,200,150,.06); }
+.ex-illo--emergency .icon-mark svg { stroke: rgba(255,210,170,.85); stroke-width: 1.4; }
+.ex-illo--emergency .accent-dot { background: #FFB87A; box-shadow: 0 0 8px rgba(255,184,122,.6); }
 
-/* 02 Property — slate-blue with cool warmth */
+/* 02 Property — cool slate-blue, refined */
 .ex-illo--property {
   background:
-    radial-gradient(ellipse at 70% 40%, rgba(160,200,255,.30) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 100%, rgba(100,140,200,.20) 0%, transparent 60%),
-    linear-gradient(135deg, #1B2940 0%, #243553 50%, #1F3258 100%);
+    radial-gradient(ellipse 60% 50% at 75% 35%, rgba(160,190,240,.18) 0%, transparent 60%),
+    linear-gradient(160deg, #1B2542 0%, #1E2B4D 45%, #1A2944 100%);
+  color: #E0E8F5;
 }
-.ex-illo--property .deco-illo .stroke { stroke: rgba(190,215,255,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; }
-.ex-illo--property .deco-illo .fill-soft { fill: rgba(170,200,250,.18); }
-.ex-illo--property .deco-illo .fill-light { fill: rgba(200,220,255,.45); }
-.ex-illo--property .deco-illo .window-on { fill: #FFD580; opacity: .9; }
-.ex-illo--property .deco-illo .window-on.w2 { animation: blink-win 4s ease-in-out infinite 1s; }
-.ex-illo--property .deco-illo .window-on.w3 { animation: blink-win 4s ease-in-out infinite 2.2s; }
-@keyframes blink-win { 0%, 60%, 100% { opacity: .9; } 70% { opacity: .2; } }
+.ex-illo--property .num-bg { color: rgba(200,220,255,.06); }
+.ex-illo--property .icon-mark svg { stroke: rgba(220,232,250,.9); stroke-width: 1.4; }
+.ex-illo--property .accent-dot { background: #A8C5F0; box-shadow: 0 0 8px rgba(168,197,240,.6); }
 
-/* 03 Moving — soft warm earth + cream */
+/* 03 Moving — refined warm earth, more muted than before */
 .ex-illo--moving {
   background:
-    radial-gradient(ellipse at 25% 30%, rgba(255,200,140,.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 85%, rgba(200,140,90,.22) 0%, transparent 60%),
-    linear-gradient(135deg, #2A2017 0%, #36281C 50%, #3F2A1B 100%);
+    radial-gradient(ellipse 60% 50% at 25% 30%, rgba(220,180,140,.16) 0%, transparent 55%),
+    linear-gradient(160deg, #221A14 0%, #2A211A 45%, #2E2520 100%);
+  color: #E8D9C3;
 }
-.ex-illo--moving .deco-illo .stroke { stroke: rgba(255,220,180,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; }
-.ex-illo--moving .deco-illo .fill-warm { fill: rgba(220,170,120,.5); }
-.ex-illo--moving .deco-illo .fill-tape { fill: rgba(200,140,80,.7); }
-.ex-illo--moving .deco-illo .truck-body { fill: rgba(245,210,160,.85); }
-.ex-illo--moving .deco-illo .truck-cab { fill: rgba(220,170,120,.95); }
-.ex-illo--moving .deco-illo .arrow-trail { stroke: rgba(255,210,160,.6); stroke-dasharray: 4 6; stroke-width: 1.5; fill: none; }
-.ex-illo--moving .deco-illo .truck { animation: truck-move 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-@keyframes truck-move { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+.ex-illo--moving .num-bg { color: rgba(232,217,195,.06); }
+.ex-illo--moving .icon-mark svg { stroke: rgba(232,217,195,.9); stroke-width: 1.4; }
+.ex-illo--moving .accent-dot { background: #D4B896; box-shadow: 0 0 8px rgba(212,184,150,.55); }
 
-/* 04 Financial — deep navy + champagne accent */
+/* 04 Financial — deep navy with subtle champagne */
 .ex-illo--financial {
   background:
-    radial-gradient(ellipse at 80% 30%, rgba(220,180,130,.22) 0%, transparent 50%),
-    radial-gradient(ellipse at 15% 85%, rgba(80,110,170,.25) 0%, transparent 60%),
-    linear-gradient(135deg, #0F1A2E 0%, #15213A 50%, #1A2845 100%);
+    radial-gradient(ellipse 55% 50% at 78% 30%, rgba(220,180,130,.14) 0%, transparent 60%),
+    linear-gradient(160deg, #0E1726 0%, #122039 50%, #0F1A2E 100%);
+  color: #E8DDC4;
 }
-.ex-illo--financial .deco-illo .stroke { stroke: rgba(220,190,150,.9); fill: none; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
-.ex-illo--financial .deco-illo .stroke-soft { stroke: rgba(180,200,230,.45); fill: none; stroke-width: 1; }
-.ex-illo--financial .deco-illo .bar { fill: rgba(220,190,150,.85); }
-.ex-illo--financial .deco-illo .bar.tall { fill: rgba(245,215,170,.95); }
-.ex-illo--financial .deco-illo .dot { fill: #DCBE96; }
-.ex-illo--financial .deco-illo .grid-line { stroke: rgba(180,200,230,.15); stroke-width: 1; fill: none; }
-.ex-illo--financial .deco-illo .trend { stroke: #DCBE96; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 0; }
+.ex-illo--financial .num-bg { color: rgba(232,221,196,.06); }
+.ex-illo--financial .icon-mark svg { stroke: #DCC09A; stroke-width: 1.4; }
+.ex-illo--financial .accent-dot { background: #DCC09A; box-shadow: 0 0 8px rgba(220,192,154,.6); }
 .ind-ex .ex-media .ex-tag {
   position: absolute; top: 16px; left: 16px; z-index: 2;
   display: inline-flex; align-items: center; gap: 8px;
