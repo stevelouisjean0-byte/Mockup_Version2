@@ -173,11 +173,66 @@
             <circle cx="40" cy="160" r="112"/>
           </svg>
         </span>
-        <div class="wwd-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>
+        <!-- Rich product preview: an "answered call" status card -->
+        <div class="wwd-preview" aria-label="Product preview: incoming call answered">
+          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Top row: live indicator + status pill -->
+            <circle class="pv-pulse" cx="14" cy="14" r="3.5" fill="#0042FF"/>
+            <text x="24" y="17" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">LIVE · 02:14 EST</text>
+            <rect x="200" y="4" width="116" height="20" rx="10" fill="#0042FF"/>
+            <text x="258" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" letter-spacing="0.4">ANSWERED · 1.8s</text>
+
+            <!-- Hairline divider -->
+            <line x1="0" y1="34" x2="320" y2="34" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- Caller block: avatar + name + number -->
+            <circle cx="22" cy="58" r="14" fill="#0042FF" fill-opacity="0.10"/>
+            <circle cx="22" cy="58" r="14" fill="none" stroke="#0042FF" stroke-width="1"/>
+            <text x="22" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0042FF">MT</text>
+            <text x="46" y="55" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0A0A0A">Marcus T.</text>
+            <text x="46" y="68" font-family="'Geist Mono', monospace" font-size="9" fill="#8A8A8A" letter-spacing="0.3">718-555-0142 · existing</text>
+
+            <!-- Routing tag right side -->
+            <rect x="218" y="46" width="98" height="22" rx="4" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <text x="267" y="60" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.2">P1 · DISPATCHED</text>
+
+            <!-- Voice waveform at bottom -->
+            <g transform="translate(0 90)">
+              <rect x="6"   y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
+              <rect x="13"  y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
+              <rect x="20"  y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
+              <rect x="27"  y="6"  width="2.5" height="22" rx="1.25" fill="#0042FF"/>
+              <rect x="34"  y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
+              <rect x="41"  y="3"  width="2.5" height="28" rx="1.25" fill="#0042FF"/>
+              <rect x="48"  y="8"  width="2.5" height="18" rx="1.25" fill="#BFBFBF"/>
+              <rect x="55"  y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
+              <rect x="62"  y="5"  width="2.5" height="24" rx="1.25" fill="#0042FF"/>
+              <rect x="69"  y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
+              <rect x="76"  y="7"  width="2.5" height="20" rx="1.25" fill="#BFBFBF"/>
+              <rect x="83"  y="2"  width="2.5" height="30" rx="1.25" fill="#0042FF"/>
+              <rect x="90"  y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
+              <rect x="97"  y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
+              <rect x="104" y="6"  width="2.5" height="22" rx="1.25" fill="#BFBFBF"/>
+              <rect x="111" y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
+              <rect x="118" y="4"  width="2.5" height="26" rx="1.25" fill="#0042FF"/>
+              <rect x="125" y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
+              <rect x="132" y="7"  width="2.5" height="20" rx="1.25" fill="#BFBFBF"/>
+              <rect x="139" y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
+              <rect x="146" y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
+              <rect x="153" y="5"  width="2.5" height="24" rx="1.25" fill="#BFBFBF"/>
+              <rect x="160" y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
+              <rect x="167" y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
+              <rect x="174" y="8"  width="2.5" height="18" rx="1.25" fill="#BFBFBF"/>
+              <rect x="181" y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
+              <rect x="188" y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
+              <rect x="195" y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
+              <rect x="202" y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
+              <rect x="209" y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
+            </g>
+            <text x="298" y="118" text-anchor="end" font-family="'Geist Mono', monospace" font-size="8" fill="#8A8A8A" letter-spacing="0.4">00:23 · ACTIVE</text>
           </svg>
         </div>
+        <span class="wwd-badge"><span class="dot"></span> Voice Agent</span>
         <span class="wwd-tag">Service · 01</span>
         <h3>Call Answering &amp; Qualification</h3>
         <p>Every inbound call answered in under two seconds, day or night. Calls qualified, urgent ones routed, the rest scheduled &mdash; in your brand's voice. You stop losing the customer to voicemail.</p>
@@ -201,11 +256,29 @@
             <path d="M 152 166 L 175 178 M 175 178 L 168 168 M 175 178 L 165 175" stroke-linejoin="round"/>
           </svg>
         </span>
-        <div class="wwd-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <!-- Rich product preview: SMS conversation with timestamps -->
+        <div class="wwd-preview" aria-label="Product preview: SMS conversation">
+          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Top row: header -->
+            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">SMS · 9:42 PM</text>
+            <rect x="240" y="2" width="76" height="16" rx="8" fill="#0042FF" fill-opacity="0.10"/>
+            <text x="278" y="13" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#0042FF" letter-spacing="1.0">DELIVERED</text>
+
+            <line x1="0" y1="22" x2="320" y2="22" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- Incoming bubble (left, gray) -->
+            <rect x="6" y="32" width="186" height="36" rx="14" fill="#F2F2F2" stroke="#E8E8E8" stroke-width="0.8"/>
+            <text x="16" y="48" font-family="Inter, sans-serif" font-size="11" fill="#0A0A0A" font-weight="500">Hi — need a quote on a 1BR</text>
+            <text x="16" y="62" font-family="Inter, sans-serif" font-size="11" fill="#0A0A0A" font-weight="500">move to Park Slope Saturday.</text>
+            <text x="16" y="78" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.6">9:42 PM · INCOMING</text>
+
+            <!-- Outgoing bubble (right, signal blue) -->
+            <rect x="118" y="86" width="200" height="36" rx="14" fill="#0042FF"/>
+            <text x="128" y="102" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="500">Got it. Estimate $640 +</text>
+            <text x="128" y="116" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="500">booking link sent →</text>
           </svg>
         </div>
+        <span class="wwd-badge"><span class="dot"></span> SMS Workflow</span>
         <span class="wwd-tag">Service · 02</span>
         <h3>Lead Capture &amp; Follow-Up</h3>
         <p>Every form, text, and call gets a same-minute response &mdash; then a follow-up sequence that runs until the lead books, replies, or opts out. No lead left to cool overnight.</p>
@@ -234,12 +307,60 @@
             <line x1="150" y1="14" x2="150" y2="40"/>
           </svg>
         </span>
-        <div class="wwd-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <path d="M16 2v4M8 2v4M3 10h18"/>
+        <!-- Rich product preview: weekly calendar with one slot booked -->
+        <div class="wwd-preview" aria-label="Product preview: calendar booking">
+          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Header row -->
+            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">APR · WEEK 17</text>
+            <rect x="232" y="2" width="84" height="16" rx="8" fill="#0042FF"/>
+            <text x="274" y="13" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#FFFFFF" letter-spacing="1.0">+1 BOOKED</text>
+
+            <!-- Day-of-week headers -->
+            <g font-family="'Geist Mono', monospace" font-size="8" fill="#8A8A8A" font-weight="600" letter-spacing="1.0" text-anchor="middle">
+              <text x="38"  y="38">MON</text>
+              <text x="84"  y="38">TUE</text>
+              <text x="130" y="38">WED</text>
+              <text x="176" y="38">THU</text>
+              <text x="222" y="38">FRI</text>
+              <text x="268" y="38">SAT</text>
+            </g>
+            <line x1="6" y1="44" x2="314" y2="44" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- Time slot row 1 (8am) -->
+            <text x="0" y="62" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">8</text>
+            <rect x="14"  y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="62"  y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="110" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="158" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="206" y="52" width="46" height="20" rx="3" fill="#0042FF" fill-opacity="0.08" stroke="#0042FF" stroke-width="1"/>
+            <text x="229" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#0042FF">M. Tannen</text>
+            <rect x="254" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- Time slot row 2 (10am) -->
+            <text x="0" y="84" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">10</text>
+            <rect x="14"  y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="62"  y="74" width="46" height="20" rx="3" fill="#0042FF"/>
+            <text x="85" y="87" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF">P. Reyes</text>
+            <rect x="110" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="158" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="206" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="254" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- Time slot row 3 (1pm) -->
+            <text x="0" y="106" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">1p</text>
+            <rect x="14"  y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="62"  y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="110" y="96" width="46" height="20" rx="3" fill="#F2F2F2" stroke="#E8E8E8" stroke-width="1"/>
+            <text x="133" y="109" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#5A5A5A">A. Beck</text>
+            <rect x="158" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="206" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+            <rect x="254" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
+
+            <text x="6"   y="126" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">3 SLOTS · TODAY</text>
+            <text x="314" y="126" text-anchor="end" font-family="'Geist Mono', monospace" font-size="7" fill="#0042FF" letter-spacing="0.4">SYNCED · CRM</text>
           </svg>
         </div>
+        <span class="wwd-badge"><span class="dot"></span> Booking</span>
         <span class="wwd-tag">Service · 03</span>
         <h3>Booking &amp; Scheduling</h3>
         <p>Customers book themselves into the right slot, with the right tech, on the right day &mdash; instantly, by voice or SMS. Your calendar fills overnight without anyone in the office.</p>
@@ -267,11 +388,52 @@
             <circle cx="100" cy="100" r="22" stroke-dasharray="3 4"/>
           </svg>
         </span>
-        <div class="wwd-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M3 12a9 9 0 1 0 9-9M3 12V4M3 12h8"/>
+        <!-- Rich product preview: dispatch pipeline with stages -->
+        <div class="wwd-preview" aria-label="Product preview: dispatch workflow pipeline">
+          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Header -->
+            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">JOB #41872 · IN MOTION</text>
+            <circle class="pv-pulse" cx="304" cy="10" r="4" fill="#0042FF"/>
+
+            <line x1="0" y1="22" x2="320" y2="22" stroke="#E8E8E8" stroke-width="1"/>
+
+            <!-- 4-stage horizontal pipeline -->
+            <g transform="translate(0 36)">
+              <!-- Connecting line behind nodes -->
+              <line x1="44" y1="20" x2="276" y2="20" stroke="#E8E8E8" stroke-width="2"/>
+              <line x1="44" y1="20" x2="200" y2="20" stroke="#0042FF" stroke-width="2"/>
+
+              <!-- Stage 1 - Intake (complete) -->
+              <circle cx="44" cy="20" r="10" fill="#0042FF"/>
+              <path d="M 39 20 L 43 24 L 50 16" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="44" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#0042FF" letter-spacing="0.6">INTAKE</text>
+              <text x="44" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:14</text>
+
+              <!-- Stage 2 - Qualified (complete) -->
+              <circle cx="122" cy="20" r="10" fill="#0042FF"/>
+              <path d="M 117 20 L 121 24 L 128 16" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="122" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#0042FF" letter-spacing="0.6">QUALIFIED</text>
+              <text x="122" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:14</text>
+
+              <!-- Stage 3 - Dispatched (active) -->
+              <circle cx="200" cy="20" r="13" fill="none" stroke="#0042FF" stroke-width="2"/>
+              <circle cx="200" cy="20" r="7" fill="#0042FF" class="pv-pulse"/>
+              <text x="200" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="700" fill="#0042FF" letter-spacing="0.6">DISPATCHED</text>
+              <text x="200" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:15</text>
+
+              <!-- Stage 4 - Invoiced (pending) -->
+              <circle cx="276" cy="20" r="10" fill="#FFFFFF" stroke="#BFBFBF" stroke-width="2"/>
+              <text x="276" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#8A8A8A" letter-spacing="0.6">INVOICED</text>
+              <text x="276" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#BFBFBF" letter-spacing="0.4">PENDING</text>
+            </g>
+
+            <!-- Bottom info row -->
+            <line x1="0" y1="106" x2="320" y2="106" stroke="#E8E8E8" stroke-width="1"/>
+            <text x="6"   y="122" font-family="'Geist Mono', monospace" font-size="8" fill="#5A5A5A" font-weight="600" letter-spacing="0.6">TECH · MARCUS T.</text>
+            <text x="314" y="122" text-anchor="end" font-family="'Geist Mono', monospace" font-size="8" fill="#0042FF" font-weight="600" letter-spacing="0.6">ETA 23 MIN</text>
           </svg>
         </div>
+        <span class="wwd-badge"><span class="dot"></span> Workflow</span>
         <span class="wwd-tag">Service · 04</span>
         <h3>Workflow &amp; Dispatch Automation</h3>
         <p>The hand-offs your team does manually &mdash; intake to dispatch, dispatch to invoice, job to follow-up &mdash; running in the background, on the systems you already pay for.</p>

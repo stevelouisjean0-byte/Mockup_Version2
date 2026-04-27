@@ -501,25 +501,55 @@ p  { margin: 0; }
 .wwd-card > p,
 .wwd-card > .wwd-points { position: relative; z-index: 2; }
 
-.wwd-icon {
-  width: 48px; height: 48px;
+/* Product preview at top of each card — looks like a real UI surface */
+.wwd-preview {
+  width: 100%;
   border-radius: 12px;
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 4px 12px rgba(10,10,10,.04);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.wwd-preview::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(10,10,10,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,10,10,.025) 1px, transparent 1px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+          mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+  opacity: .8;
+}
+.wwd-preview::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at top right, rgba(0,66,255,.06) 0%, transparent 60%);
+}
+.wwd-card:hover .wwd-preview { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 12px 28px rgba(10,10,10,.08); }
+.wwd-preview svg { width: 100%; height: auto; display: block; position: relative; z-index: 1; }
+.wwd-preview .pv-pulse {
+  transform-origin: center; transform-box: fill-box;
+  animation: pv-pulse 1.6s ease-in-out infinite;
+}
+@keyframes pv-pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+
+/* Small badge below preview — keeps service-type recognition */
+.wwd-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
   background: var(--signal-bg);
   color: var(--signal);
-  display: grid; place-items: center;
-  position: relative;
-  box-shadow: 0 0 0 0 rgba(0,66,255,0);
-  transition: box-shadow .35s var(--ease), transform .35s var(--ease);
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  font-weight: 600;
+  width: fit-content;
 }
-.wwd-icon::after {
-  content: ""; position: absolute; inset: -8px; border-radius: 16px;
-  background: radial-gradient(circle, rgba(0,66,255,.18) 0%, transparent 70%);
-  opacity: 0; transition: opacity .35s var(--ease);
-  z-index: -1;
-}
-.wwd-card:hover .wwd-icon { box-shadow: 0 8px 24px rgba(0,66,255,.18); transform: translateY(-1px); }
-.wwd-card:hover .wwd-icon::after { opacity: 1; }
-.wwd-icon svg { width: 24px; height: 24px; }
+.wwd-badge .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--signal); }
 
 .wwd-tag { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-3); }
 .wwd-card h3 { font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.025em; line-height: 1.05; color: var(--ink); }
