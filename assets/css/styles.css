@@ -532,11 +532,11 @@ p  { margin: 0; }
 .ex-illo .icon-mark,
 .ex-illo .accent-dot { z-index: 4; }
 
-/* Per-industry video tint via filter — feels industry-specific even with abstract footage */
-.ex-illo--emergency .ambient { filter: grayscale(100%) contrast(110%) brightness(.55) sepia(.3) hue-rotate(-15deg) saturate(1.3); opacity: .5; }
-.ex-illo--property  .ambient { filter: grayscale(100%) contrast(108%) brightness(.6); opacity: .5; }
-.ex-illo--moving    .ambient { filter: grayscale(100%) contrast(108%) brightness(.65) sepia(.5) hue-rotate(-25deg) saturate(.9); opacity: .5; }
-.ex-illo--financial .ambient { filter: grayscale(100%) contrast(110%) brightness(.55); opacity: .45; }
+/* Per-industry video tint — videos are now the dominant background element */
+.ex-illo--emergency .ambient { filter: contrast(108%) brightness(.65) saturate(.9); opacity: .92; mix-blend-mode: normal; }
+.ex-illo--property  .ambient { filter: contrast(108%) brightness(.7)  saturate(.9); opacity: .92; mix-blend-mode: normal; }
+.ex-illo--moving    .ambient { filter: contrast(108%) brightness(.7)  saturate(.95); opacity: .92; mix-blend-mode: normal; }
+.ex-illo--financial .ambient { filter: contrast(110%) brightness(.6)  saturate(.85); opacity: .92; mix-blend-mode: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .ex-illo .ambient { display: none; }
