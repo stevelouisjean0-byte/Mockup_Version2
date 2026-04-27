@@ -436,10 +436,9 @@ p  { margin: 0; }
   transition: transform 1s var(--ease), filter .5s var(--ease);
   z-index: 0;
 }
-.ind-ex .ex-media::after {
-  content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(17,17,17,.15) 0%, rgba(17,17,17,.5) 100%);
-}
+/* The dark gradient overlay was needed when ex-media had a video.
+   Now that ex-illo is bespoke gradients, it would darken the watermark numeral. */
+.ind-ex .ex-media::after { content: none; }
 
 /* Gradient backgrounds + decorative SVG per industry */
 .ex-illo {
@@ -523,7 +522,7 @@ p  { margin: 0; }
     linear-gradient(160deg, #1A1F2C 0%, #1F2230 45%, #2A1F1F 100%);
   color: #F5E6D3;
 }
-.ex-illo--emergency .num-bg { color: rgba(255,200,150,.06); }
+.ex-illo--emergency .num-bg { color: rgba(255,200,150,.22); }
 .ex-illo--emergency .icon-mark svg { stroke: rgba(255,210,170,.85); stroke-width: 1.4; }
 .ex-illo--emergency .accent-dot { background: #FFB87A; box-shadow: 0 0 8px rgba(255,184,122,.6); }
 
@@ -534,7 +533,7 @@ p  { margin: 0; }
     linear-gradient(160deg, #1B2542 0%, #1E2B4D 45%, #1A2944 100%);
   color: #E0E8F5;
 }
-.ex-illo--property .num-bg { color: rgba(200,220,255,.06); }
+.ex-illo--property .num-bg { color: rgba(200,220,255,.22); }
 .ex-illo--property .icon-mark svg { stroke: rgba(220,232,250,.9); stroke-width: 1.4; }
 .ex-illo--property .accent-dot { background: #A8C5F0; box-shadow: 0 0 8px rgba(168,197,240,.6); }
 
@@ -545,7 +544,7 @@ p  { margin: 0; }
     linear-gradient(160deg, #221A14 0%, #2A211A 45%, #2E2520 100%);
   color: #E8D9C3;
 }
-.ex-illo--moving .num-bg { color: rgba(232,217,195,.06); }
+.ex-illo--moving .num-bg { color: rgba(232,217,195,.22); }
 .ex-illo--moving .icon-mark svg { stroke: rgba(232,217,195,.9); stroke-width: 1.4; }
 .ex-illo--moving .accent-dot { background: #D4B896; box-shadow: 0 0 8px rgba(212,184,150,.55); }
 
@@ -556,7 +555,7 @@ p  { margin: 0; }
     linear-gradient(160deg, #0E1726 0%, #122039 50%, #0F1A2E 100%);
   color: #E8DDC4;
 }
-.ex-illo--financial .num-bg { color: rgba(232,221,196,.06); }
+.ex-illo--financial .num-bg { color: rgba(232,221,196,.22); }
 .ex-illo--financial .icon-mark svg { stroke: #DCC09A; stroke-width: 1.4; }
 .ex-illo--financial .accent-dot { background: #DCC09A; box-shadow: 0 0 8px rgba(220,192,154,.6); }
 .ind-ex .ex-media .ex-tag {
