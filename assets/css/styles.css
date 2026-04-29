@@ -5,21 +5,22 @@
 
 /* --- Tokens ----------------------------------------------------------- */
 :root {
-  --bg:           #FFFFFF;        /* pure white base */
-  --bg-alt:       #F5F5F5;        /* alternating light-gray sections */
-  --bg-soft:      #FAFAFA;        /* very subtle whisper-gray */
-  --surface:      #FFFFFF;
-  --surface-2:   #F8F8F8;
-  --surface-3:   #ECECEC;
-  --border:       #EAEAEA;
-  --border-2:     #D4D4D4;
-  --border-3:     #BFBFBF;
+  /* Neutrals are tinted toward the signal-blue hue (chroma ~0.005). Avoid pure #fff/#000. */
+  --bg:           #FCFCFD;        /* near-white, faintly cool */
+  --bg-alt:       #F4F5F8;        /* alternating cool-gray sections */
+  --bg-soft:      #FAFAFC;        /* very subtle whisper */
+  --surface:      #FCFCFD;
+  --surface-2:    #F7F8FA;
+  --surface-3:    #EBECF0;
+  --border:       #E8EAEF;
+  --border-2:     #D2D4DA;
+  --border-3:     #BCBFC5;
 
-  --ink:          #111111;        /* near-black per spec */
-  --ink-2:        #1F1F1F;
-  --text-2:       #4A4A4A;
-  --text-3:       #6E6E6E;
-  --text-4:       #9A9A9A;
+  --ink:          #11121A;        /* near-black, faint blue cast */
+  --ink-2:        #1E1F28;
+  --text-2:       #494B55;
+  --text-3:       #6D6F77;
+  --text-4:       #999BA3;
 
   --signal:       #1F3A8A;        /* deep institutional blue (not neon) */
   --signal-2:     #2D4FBF;
@@ -168,13 +169,10 @@ p  { margin: 0; }
 }
 .mark { display: inline-flex; align-items: center; gap: 10px; }
 .mark .seal {
-  width: 22px; height: 22px; border-radius: 6px;
-  background: var(--ink); position: relative;
-  display: inline-grid; place-items: center;
+  width: 36px; height: 24px;
+  background: url('../img/logo-mark.svg') center/contain no-repeat;
   font-size: 0; color: transparent;
-}
-.mark .seal::before {
-  content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--signal);
+  flex: 0 0 auto;
 }
 .mark .word { font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); line-height: 1; }
 .mark .word .small { display: none; }
@@ -233,7 +231,7 @@ p  { margin: 0; }
   background:
     radial-gradient(ellipse 80% 60% at 80% 20%, rgba(31,58,138,.08) 0%, transparent 60%),
     radial-gradient(ellipse 90% 70% at 20% 80%, rgba(232,237,247,.55) 0%, transparent 55%),
-    linear-gradient(180deg, #FFFFFF 0%, #FAFBFD 40%, #F4F6FB 100%);
+    linear-gradient(180deg, var(--bg) 0%, #FAFBFD 40%, #F4F6FB 100%);
 }
 .hero-cinema::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
@@ -780,7 +778,7 @@ p  { margin: 0; }
   position: relative;
   background:
     radial-gradient(ellipse at top right, rgba(31,58,138,.04) 0%, transparent 55%),
-    linear-gradient(180deg, #FFFFFF 0%, #FCFCFC 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 36px 32px 32px;
@@ -828,7 +826,7 @@ p  { margin: 0; }
   width: 100%;
   border-radius: 12px;
   background:
-    linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--surface-2) 100%);
   border: 1px solid var(--border);
   padding: 14px 16px;
   margin-bottom: 6px;
@@ -1094,6 +1092,23 @@ p  { margin: 0; }
   border-right: 1px solid var(--border);
 }
 @media (max-width: 900px) { .ind-panel { flex: none; aspect-ratio: 4/5; min-height: 70vh; } }
+
+/* Stacked variant: vertical rail at all widths (no scroll-jack). */
+.industries-section[data-stacked] .industries-track { height: auto; }
+.industries-section[data-stacked] .industries-sticky { position: relative; height: auto; overflow: visible; }
+.industries-section[data-stacked] .industries-rail {
+  display: grid; width: 100%; height: auto;
+  grid-template-columns: 1fr; grid-auto-rows: minmax(560px, 80vh);
+  transform: none !important;
+}
+@media (min-width: 901px) {
+  .industries-section[data-stacked] .industries-rail { grid-template-columns: 1fr 1fr; }
+}
+.industries-section[data-stacked] .ind-panel {
+  flex: none; height: auto; aspect-ratio: auto;
+  border-right: 0; border-bottom: 1px solid var(--border);
+}
+.industries-section[data-stacked] .industries-progress { display: none; }
 .ind-panel video, .ind-panel img.poster {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   filter: grayscale(100%) contrast(108%) brightness(.6);
