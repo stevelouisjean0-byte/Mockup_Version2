@@ -19,3 +19,6 @@ yarn-error.log*
 
 # Logs
 *.log
+
+# Claude Code project skills (local tooling, not site content)
+.claude/

@@ -147,10 +147,12 @@
   }
 
   // ----- Industries horizontal scroll-jack --------------------------
+  const indSection = document.querySelector('.industries-section');
   const indTrack = document.querySelector('[data-ind-track]');
   const indRail  = document.querySelector('[data-ind-rail]');
   const indBar   = document.querySelector('[data-ind-bar]');
-  if (indTrack && indRail && window.matchMedia('(min-width: 901px)').matches) {
+  const indStacked = indSection && indSection.hasAttribute('data-stacked');
+  if (!indStacked && indTrack && indRail && window.matchMedia('(min-width: 901px)').matches) {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion) {
       const update = () => {
