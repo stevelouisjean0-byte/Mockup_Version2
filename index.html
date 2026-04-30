@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nexus AI Horizon — Capture every call. Convert every lead.</title>
-  <meta name="description" content="AI voice agents that answer in 2 seconds, qualify in 30, and book the job before your competitor picks up. Built in NYC for emergency services, property management, moving, and financial services." />
+  <meta name="description" content="AI voice agents and SMS workflows that answer every inbound call in under two seconds, qualify leads, and book the job — 24/7, in your brand's voice. Built in NYC for emergency services, property management, moving, and financial services." />
   <meta name="theme-color" content="#1F3A8A" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo-mark.svg" />
   <link rel="apple-touch-icon" href="assets/img/logo.svg" />
@@ -12,20 +12,39 @@
   <meta property="og:site_name" content="Nexus AI Horizon" />
   <meta property="og:title" content="Nexus AI Horizon — Capture every call. Convert every lead." />
   <meta property="og:description" content="AI voice agents that answer in 2 seconds and book the job before your competitor picks up." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&h=630&q=70" />
+  <meta property="og:image" content="assets/img/og-card.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nexus AI Horizon — Capture every call. Convert every lead." />
   <meta name="twitter:description" content="AI voice agents that answer in 2 seconds and book the job before your competitor picks up." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&h=630&q=70" />
+  <meta name="twitter:image" content="assets/img/og-card.svg" />
 
-  <!-- Geist sans + mono. Instrument Serif for sparing italic accents. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nexus AI Horizon",
+    "description": "AI voice agents and SMS workflows for service businesses in NYC.",
+    "url": "https://nexusaihorizon.com",
+    "telephone": "+1-718-555-0142",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22nd Street",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10010",
+      "addressCountry": "US"
+    },
+    "areaServed": "New York City"
+  }
+  </script>
 </head>
 <body>
 
@@ -44,20 +63,17 @@
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="demo">Book a strategy call</a>
     </nav>
-    <button class="mast-burger" aria-label="Open menu">Menu</button>
+    <button class="mast-burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
   </div>
 </header>
 
-<div class="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <div class="mob-top">
     <span class="label">Menu</span>
     <button class="mob-close" aria-label="Close menu">Close</button>
   </div>
   <a class="mob-link" href="services.html">Services</a>
-  <a class="mob-link" href="niches/emergency-services.html">Emergency Home Services</a>
-  <a class="mob-link" href="niches/property-management.html">Property Management</a>
-  <a class="mob-link" href="niches/moving.html">Moving & Relocation</a>
-  <a class="mob-link" href="niches/financial-services.html">Financial Services</a>
+  <a class="mob-link" href="#industries">Industries</a>
   <a class="mob-link" href="about.html">About</a>
   <a class="mob-link" href="contact.html">Contact</a>
   <div style="margin-top: 32px;"><a href="contact.html" class="btn signal">Book a strategy call →</a></div>
@@ -65,1086 +81,299 @@
 
 <main>
 
-  <!-- ============ 01 · HERO — silent loop + kinetic headline ============
-       Loop: NYC at 3am, ambient. Grayscale, vignette, brightness pulled.
-       Replace <source> URLs with custom B-roll (3am NYC, phone ringing in
-       empty office, AI waveform answering). Comments mark every swap point. -->
-  <section class="hero-cinema">
-    <!-- NYC skyline as faint background overlay (light wash) -->
-    <div class="city-overlay" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2400&q=70" alt="" />
-    </div>
-
+  <!-- ============ 1 · HERO — single headline, single CTA ============ -->
+  <section class="hero-clean">
     <div class="container">
-
-      <!-- ====== HERO VIDEO LOOP — framed cinematic banner at the top ======
-           Unmistakable NYC at night.
-           Primary: Times Square crowd time-lapse (Pexels 11494571).
-           Fallback: Brooklyn Bridge aerial (Pexels 5729409). Both verified live. -->
-      <figure class="hero-video">
-        <img class="poster" src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2400&q=70" alt="" />
-        <video autoplay muted loop playsinline preload="metadata"
-               poster="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2400&q=70">
-          <source src="https://videos.pexels.com/video-files/11494571/11494571-hd_1920_1080_30fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/5729409/5729409-hd_1920_1080_30fps.mp4" type="video/mp4" />
-        </video>
-        <div class="overlay">
-          <div class="top">
-            <span class="live">Live · NYC dispatch · 04:11 EDT</span>
-            <span>April 2026</span>
-          </div>
-          <div class="bottom">
-            <span class="caption">Built where the phones ring at 3am &mdash; <br/>and someone always picks up.</span>
-            <span class="meta">Lower Manhattan · 22nd St</span>
-          </div>
-        </div>
-      </figure>
-
-      <div class="hero-stamp">
-        <span class="live">AI Voice &amp; SMS Automation</span>
-        <span>For NYC service businesses</span>
-        <span class="hide-mobile">Built in Lower Manhattan · Est. 2023</span>
-      </div>
-
-      <h1>
-        <span class="word">Capture</span>
-        <span class="word">every</span>
-        <span class="word signal">call.</span>
-        <br/>
-        <span class="word">Convert</span>
-        <span class="word italic">every</span>
-        <span class="word">lead.</span>
-      </h1>
-
-      <p class="sub">
-        <strong style="color: var(--ink); font-weight: 500;">Nexus AI Horizon</strong> builds AI voice agents and SMS workflows for service businesses.
-        We answer every inbound call in under 2 seconds, qualify leads in 30, and book the job &mdash;
-        24/7, in your brand's voice. No new hires.
+      <span class="eyebrow"><span class="dot"></span> AI voice &amp; SMS · NYC</span>
+      <h1>Capture every call. <span class="serif-i">Convert every lead.</span></h1>
+      <p class="hero-sub">
+        AI voice agents and SMS workflows that answer every inbound call in under two seconds,
+        qualify leads, and book the job &mdash; 24/7, in your brand's voice. No new hires.
       </p>
-
-      <div class="actions">
+      <div class="hero-actions">
         <a href="contact.html" class="btn signal">Book a strategy call →</a>
-        <a href="#system" class="btn ghost">See how it works</a>
       </div>
-
-      <ul class="hero-served">
-        <li><span>Emergency Home Services</span></li>
-        <li><span>Property Management</span></li>
-        <li><span>Moving &amp; Relocation</span></li>
-        <li><span>Financial Services</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- ============ TRUST STRIP — industries + compliance signals ============ -->
-  <div class="trust-bar">
+  <!-- ============ 2 · PROBLEM ============ -->
+  <section class="problem-section section bg-gray reveal">
     <div class="container">
-      <div class="group">
-        <span class="stat"><span class="pulse"></span> 31 active deployments</span>
-        <span class="stat hide-mobile">Avg. answer time &nbsp; <span class="sig">1.8s</span></span>
-        <span class="stat hide-mobile">First-call booking rate &nbsp; <span class="sig">62%</span></span>
-      </div>
-      <div class="group">
-        <span class="stat hide-mobile">SOC 2-ready · CCO-approved · TCPA compliant</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ 01 · WHAT WE DO (white section) ============ -->
-  <section class="what-we-do section container bg-white reveal">
-    <div class="section-meta">
-      <span><span class="num">01 ·</span> What we do</span>
-      <span>Identify · Design · Automate</span>
-    </div>
-
-    <div class="wwd-head">
-      <h2>We find what's costing you customers, <span class="serif-i">and we automate the fix.</span></h2>
-      <p class="lede" style="margin-top: 24px;">
-        Nexus AI Horizon identifies the exact bottlenecks costing your business revenue &mdash;
-        missed calls, slow follow-up, manual scheduling, dispatch chaos &mdash; then designs and
-        deploys the systems to solve them. End-to-end. Live in 14 days. Tuned every week.
-      </p>
-      <p class="lede" style="margin-top: 18px;">
-        Four services. One operating layer behind your phone, your inbox, and your calendar.
-      </p>
-    </div>
-
-    <div class="wwd-grid wwd-grid-4">
-
-      <!-- 01 · CALL ANSWERING & QUALIFICATION -->
-      <article class="wwd-card">
-        <!-- Concentric ripple waves emanating from a phone — represents the inbound call answered -->
-        <span class="deco" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <circle cx="40" cy="160" r="6" fill="currentColor" stroke="none"/>
-            <path d="M 40 160 Q 70 130 100 100 T 160 40"/>
-            <circle cx="40" cy="160" r="20"/>
-            <circle cx="40" cy="160" r="40"/>
-            <circle cx="40" cy="160" r="62"/>
-            <circle cx="40" cy="160" r="86"/>
-            <circle cx="40" cy="160" r="112"/>
-          </svg>
-        </span>
-        <!-- Rich product preview: an "answered call" status card -->
-        <div class="wwd-preview" aria-label="Product preview: incoming call answered">
-          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
-            <!-- Top row: live indicator + status pill -->
-            <circle class="pv-pulse" cx="14" cy="14" r="3.5" fill="#0042FF"/>
-            <text x="24" y="17" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">LIVE · 02:14 EDT</text>
-            <rect x="200" y="4" width="116" height="20" rx="10" fill="#0042FF"/>
-            <text x="258" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" letter-spacing="0.4">ANSWERED · 1.8s</text>
-
-            <!-- Hairline divider -->
-            <line x1="0" y1="34" x2="320" y2="34" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- Caller block: avatar + name + number -->
-            <circle cx="22" cy="58" r="14" fill="#0042FF" fill-opacity="0.10"/>
-            <circle cx="22" cy="58" r="14" fill="none" stroke="#0042FF" stroke-width="1"/>
-            <text x="22" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0042FF">MT</text>
-            <text x="46" y="55" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0A0A0A">Marcus T.</text>
-            <text x="46" y="68" font-family="'Geist Mono', monospace" font-size="9" fill="#8A8A8A" letter-spacing="0.3">718-555-0142 · existing</text>
-
-            <!-- Routing tag right side -->
-            <rect x="218" y="46" width="98" height="22" rx="4" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <text x="267" y="60" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.2">P1 · DISPATCHED</text>
-
-            <!-- Voice waveform at bottom -->
-            <g transform="translate(0 90)">
-              <rect x="6"   y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
-              <rect x="13"  y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
-              <rect x="20"  y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
-              <rect x="27"  y="6"  width="2.5" height="22" rx="1.25" fill="#0042FF"/>
-              <rect x="34"  y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
-              <rect x="41"  y="3"  width="2.5" height="28" rx="1.25" fill="#0042FF"/>
-              <rect x="48"  y="8"  width="2.5" height="18" rx="1.25" fill="#BFBFBF"/>
-              <rect x="55"  y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
-              <rect x="62"  y="5"  width="2.5" height="24" rx="1.25" fill="#0042FF"/>
-              <rect x="69"  y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
-              <rect x="76"  y="7"  width="2.5" height="20" rx="1.25" fill="#BFBFBF"/>
-              <rect x="83"  y="2"  width="2.5" height="30" rx="1.25" fill="#0042FF"/>
-              <rect x="90"  y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
-              <rect x="97"  y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
-              <rect x="104" y="6"  width="2.5" height="22" rx="1.25" fill="#BFBFBF"/>
-              <rect x="111" y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
-              <rect x="118" y="4"  width="2.5" height="26" rx="1.25" fill="#0042FF"/>
-              <rect x="125" y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
-              <rect x="132" y="7"  width="2.5" height="20" rx="1.25" fill="#BFBFBF"/>
-              <rect x="139" y="9"  width="2.5" height="16" rx="1.25" fill="#BFBFBF"/>
-              <rect x="146" y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
-              <rect x="153" y="5"  width="2.5" height="24" rx="1.25" fill="#BFBFBF"/>
-              <rect x="160" y="10" width="2.5" height="14" rx="1.25" fill="#BFBFBF"/>
-              <rect x="167" y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
-              <rect x="174" y="8"  width="2.5" height="18" rx="1.25" fill="#BFBFBF"/>
-              <rect x="181" y="11" width="2.5" height="12" rx="1.25" fill="#BFBFBF"/>
-              <rect x="188" y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
-              <rect x="195" y="12" width="2.5" height="10" rx="1.25" fill="#BFBFBF"/>
-              <rect x="202" y="13" width="2.5" height="8"  rx="1.25" fill="#BFBFBF"/>
-              <rect x="209" y="14" width="2.5" height="6"  rx="1.25" fill="#BFBFBF"/>
-            </g>
-            <text x="298" y="118" text-anchor="end" font-family="'Geist Mono', monospace" font-size="8" fill="#8A8A8A" letter-spacing="0.4">00:23 · ACTIVE</text>
-          </svg>
-        </div>
-        <span class="wwd-badge"><span class="dot"></span> Voice Agent</span>
-        <span class="wwd-tag">Service · 01</span>
-        <h3>Call Answering &amp; Qualification</h3>
-        <p>Every inbound call answered in under two seconds, day or night. Calls qualified, urgent ones routed, the rest scheduled &mdash; in your brand's voice. You stop losing the customer to voicemail.</p>
-        <ul class="wwd-points">
-          <li>More booked jobs from inbound calls</li>
-          <li>Zero missed after-hours opportunities</li>
-          <li>Customers reach you before competitors do</li>
-        </ul>
-      </article>
-
-      <!-- 02 · LEAD CAPTURE & FOLLOW-UP -->
-      <article class="wwd-card">
-        <!-- SMS bubble cluster + arrow trails — represents follow-up sequence -->
-        <span class="deco" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <rect x="20" y="20" width="58" height="38" rx="8"/>
-            <rect x="50" y="70" width="74" height="44" rx="8"/>
-            <rect x="90" y="126" width="62" height="40" rx="8"/>
-            <path d="M 78 40 Q 100 50 110 70"/>
-            <path d="M 124 92 Q 140 110 152 126"/>
-            <path d="M 152 166 L 175 178 M 175 178 L 168 168 M 175 178 L 165 175" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <!-- Rich product preview: SMS conversation with timestamps -->
-        <div class="wwd-preview" aria-label="Product preview: SMS conversation">
-          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
-            <!-- Top row: header -->
-            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">SMS · 9:42 PM</text>
-            <rect x="240" y="2" width="76" height="16" rx="8" fill="#0042FF" fill-opacity="0.10"/>
-            <text x="278" y="13" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#0042FF" letter-spacing="1.0">DELIVERED</text>
-
-            <line x1="0" y1="22" x2="320" y2="22" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- Incoming bubble (left, gray) -->
-            <rect x="6" y="32" width="186" height="36" rx="14" fill="#F2F2F2" stroke="#E8E8E8" stroke-width="0.8"/>
-            <text x="16" y="48" font-family="Inter, sans-serif" font-size="11" fill="#0A0A0A" font-weight="500">Hi — need a quote on a 1BR</text>
-            <text x="16" y="62" font-family="Inter, sans-serif" font-size="11" fill="#0A0A0A" font-weight="500">move to Park Slope Saturday.</text>
-            <text x="16" y="78" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.6">9:42 PM · INCOMING</text>
-
-            <!-- Outgoing bubble (right, signal blue) -->
-            <rect x="118" y="86" width="200" height="36" rx="14" fill="#0042FF"/>
-            <text x="128" y="102" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="500">Got it. Estimate $640 +</text>
-            <text x="128" y="116" font-family="Inter, sans-serif" font-size="11" fill="#FFFFFF" font-weight="500">booking link sent →</text>
-          </svg>
-        </div>
-        <span class="wwd-badge"><span class="dot"></span> SMS Workflow</span>
-        <span class="wwd-tag">Service · 02</span>
-        <h3>Lead Capture &amp; Follow-Up</h3>
-        <p>Every form, text, and call gets a same-minute response &mdash; then a follow-up sequence that runs until the lead books, replies, or opts out. No lead left to cool overnight.</p>
-        <ul class="wwd-points">
-          <li>Faster response &mdash; minutes, not hours</li>
-          <li>Higher conversion from existing inbound</li>
-          <li>No more leads forgotten in a spreadsheet</li>
-        </ul>
-      </article>
-
-      <!-- 03 · BOOKING & SCHEDULING -->
-      <article class="wwd-card">
-        <!-- Calendar grid with one slot highlighted — represents the booked job -->
-        <span class="deco" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <rect x="20" y="30" width="160" height="140" rx="10"/>
-            <line x1="20" y1="60" x2="180" y2="60"/>
-            <line x1="60" y1="60" x2="60" y2="170"/>
-            <line x1="100" y1="60" x2="100" y2="170"/>
-            <line x1="140" y1="60" x2="140" y2="170"/>
-            <line x1="20" y1="90" x2="180" y2="90"/>
-            <line x1="20" y1="120" x2="180" y2="120"/>
-            <line x1="20" y1="150" x2="180" y2="150"/>
-            <rect x="100" y="120" width="40" height="30" fill="currentColor" stroke="none" opacity=".4"/>
-            <line x1="50" y1="14" x2="50" y2="40"/>
-            <line x1="150" y1="14" x2="150" y2="40"/>
-          </svg>
-        </span>
-        <!-- Rich product preview: weekly calendar with one slot booked -->
-        <div class="wwd-preview" aria-label="Product preview: calendar booking">
-          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
-            <!-- Header row -->
-            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">APR · WEEK 17</text>
-            <rect x="232" y="2" width="84" height="16" rx="8" fill="#0042FF"/>
-            <text x="274" y="13" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#FFFFFF" letter-spacing="1.0">+1 BOOKED</text>
-
-            <!-- Day-of-week headers -->
-            <g font-family="'Geist Mono', monospace" font-size="8" fill="#8A8A8A" font-weight="600" letter-spacing="1.0" text-anchor="middle">
-              <text x="38"  y="38">MON</text>
-              <text x="84"  y="38">TUE</text>
-              <text x="130" y="38">WED</text>
-              <text x="176" y="38">THU</text>
-              <text x="222" y="38">FRI</text>
-              <text x="268" y="38">SAT</text>
-            </g>
-            <line x1="6" y1="44" x2="314" y2="44" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- Time slot row 1 (8am) -->
-            <text x="0" y="62" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">8</text>
-            <rect x="14"  y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="62"  y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="110" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="158" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="206" y="52" width="46" height="20" rx="3" fill="#0042FF" fill-opacity="0.08" stroke="#0042FF" stroke-width="1"/>
-            <text x="229" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#0042FF">M. Tannen</text>
-            <rect x="254" y="52" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- Time slot row 2 (10am) -->
-            <text x="0" y="84" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">10</text>
-            <rect x="14"  y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="62"  y="74" width="46" height="20" rx="3" fill="#0042FF"/>
-            <text x="85" y="87" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF">P. Reyes</text>
-            <rect x="110" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="158" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="206" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="254" y="74" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- Time slot row 3 (1pm) -->
-            <text x="0" y="106" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">1p</text>
-            <rect x="14"  y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="62"  y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="110" y="96" width="46" height="20" rx="3" fill="#F2F2F2" stroke="#E8E8E8" stroke-width="1"/>
-            <text x="133" y="109" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#5A5A5A">A. Beck</text>
-            <rect x="158" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="206" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-            <rect x="254" y="96" width="46" height="20" rx="3" fill="none" stroke="#E8E8E8" stroke-width="1"/>
-
-            <text x="6"   y="126" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">3 SLOTS · TODAY</text>
-            <text x="314" y="126" text-anchor="end" font-family="'Geist Mono', monospace" font-size="7" fill="#0042FF" letter-spacing="0.4">SYNCED · CRM</text>
-          </svg>
-        </div>
-        <span class="wwd-badge"><span class="dot"></span> Booking</span>
-        <span class="wwd-tag">Service · 03</span>
-        <h3>Booking &amp; Scheduling</h3>
-        <p>Customers book themselves into the right slot, with the right tech, on the right day &mdash; instantly, by voice or SMS. Your calendar fills overnight without anyone in the office.</p>
-        <ul class="wwd-points">
-          <li>Jobs booked while you sleep</li>
-          <li>Calendar always current, never double-booked</li>
-          <li>Customers confirmed and reminded automatically</li>
-        </ul>
-      </article>
-
-      <!-- 04 · WORKFLOW & DISPATCH AUTOMATION -->
-      <article class="wwd-card">
-        <!-- Connected nodes / dispatch routing diagram — represents internal automation -->
-        <span class="deco" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <circle cx="40" cy="50" r="10"/>
-            <circle cx="100" cy="100" r="14"/>
-            <circle cx="160" cy="50" r="10"/>
-            <circle cx="40" cy="150" r="10"/>
-            <circle cx="160" cy="150" r="10"/>
-            <line x1="50" y1="58" x2="88" y2="92"/>
-            <line x1="150" y1="58" x2="112" y2="92"/>
-            <line x1="50" y1="142" x2="88" y2="108"/>
-            <line x1="150" y1="142" x2="112" y2="108"/>
-            <circle cx="100" cy="100" r="22" stroke-dasharray="3 4"/>
-          </svg>
-        </span>
-        <!-- Rich product preview: dispatch pipeline with stages -->
-        <div class="wwd-preview" aria-label="Product preview: dispatch workflow pipeline">
-          <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
-            <!-- Header -->
-            <text x="6" y="12" font-family="'Geist Mono', monospace" font-size="8" font-weight="600" fill="#5A5A5A" letter-spacing="1.4">JOB #41872 · IN MOTION</text>
-            <circle class="pv-pulse" cx="304" cy="10" r="4" fill="#0042FF"/>
-
-            <line x1="0" y1="22" x2="320" y2="22" stroke="#E8E8E8" stroke-width="1"/>
-
-            <!-- 4-stage horizontal pipeline -->
-            <g transform="translate(0 36)">
-              <!-- Connecting line behind nodes -->
-              <line x1="44" y1="20" x2="276" y2="20" stroke="#E8E8E8" stroke-width="2"/>
-              <line x1="44" y1="20" x2="200" y2="20" stroke="#0042FF" stroke-width="2"/>
-
-              <!-- Stage 1 - Intake (complete) -->
-              <circle cx="44" cy="20" r="10" fill="#0042FF"/>
-              <path d="M 39 20 L 43 24 L 50 16" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="44" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#0042FF" letter-spacing="0.6">INTAKE</text>
-              <text x="44" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:14</text>
-
-              <!-- Stage 2 - Qualified (complete) -->
-              <circle cx="122" cy="20" r="10" fill="#0042FF"/>
-              <path d="M 117 20 L 121 24 L 128 16" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="122" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#0042FF" letter-spacing="0.6">QUALIFIED</text>
-              <text x="122" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:14</text>
-
-              <!-- Stage 3 - Dispatched (active) -->
-              <circle cx="200" cy="20" r="13" fill="none" stroke="#0042FF" stroke-width="2"/>
-              <circle cx="200" cy="20" r="7" fill="#0042FF" class="pv-pulse"/>
-              <text x="200" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="700" fill="#0042FF" letter-spacing="0.6">DISPATCHED</text>
-              <text x="200" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#8A8A8A" letter-spacing="0.4">02:15</text>
-
-              <!-- Stage 4 - Invoiced (pending) -->
-              <circle cx="276" cy="20" r="10" fill="#FFFFFF" stroke="#BFBFBF" stroke-width="2"/>
-              <text x="276" y="48" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" font-weight="600" fill="#8A8A8A" letter-spacing="0.6">INVOICED</text>
-              <text x="276" y="58" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="7" fill="#BFBFBF" letter-spacing="0.4">PENDING</text>
-            </g>
-
-            <!-- Bottom info row -->
-            <line x1="0" y1="106" x2="320" y2="106" stroke="#E8E8E8" stroke-width="1"/>
-            <text x="6"   y="122" font-family="'Geist Mono', monospace" font-size="8" fill="#5A5A5A" font-weight="600" letter-spacing="0.6">TECH · MARCUS T.</text>
-            <text x="314" y="122" text-anchor="end" font-family="'Geist Mono', monospace" font-size="8" fill="#0042FF" font-weight="600" letter-spacing="0.6">ETA 23 MIN</text>
-          </svg>
-        </div>
-        <span class="wwd-badge"><span class="dot"></span> Workflow</span>
-        <span class="wwd-tag">Service · 04</span>
-        <h3>Workflow &amp; Dispatch Automation</h3>
-        <p>The hand-offs your team does manually &mdash; intake to dispatch, dispatch to invoice, job to follow-up &mdash; running in the background, on the systems you already pay for.</p>
-        <ul class="wwd-points">
-          <li>Less manual work for your office team</li>
-          <li>Faster dispatch, fewer dropped balls</li>
-          <li>Your team back to billable hours</li>
-        </ul>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ 02 · INDUSTRY EXAMPLES (light gray section) ============ -->
-  <section class="ind-examples bg-gray reveal">
-    <div class="container section">
       <div class="section-meta">
-        <span><span class="num">02 ·</span> What this looks like in your industry</span>
-        <span>Concrete examples · Real outcomes</span>
+        <span><span class="num">01 ·</span> The problem</span>
+        <span>What it costs to miss a call</span>
       </div>
 
-      <div class="ind-examples-head">
-        <h2>Tailored to four industries. <span class="serif-i">Built for the operators in them.</span></h2>
+      <div class="problem-grid">
+        <div class="problem-copy">
+          <h2>Every voicemail is <span class="serif-i">a bill you'll never send.</span></h2>
+          <p class="lede">
+            The average service business misses 38% of inbound calls. At $400 per job,
+            that's $146,000 a year on the floor. Most owners can name the number.
+            Few can stop it.
+          </p>
+        </div>
+        <ul class="problem-stats">
+          <li>
+            <span class="ps-num"><span data-count="38" data-suffix="%">38%</span></span>
+            <span class="ps-lab">of inbound calls · unanswered, industry average</span>
+          </li>
+          <li>
+            <span class="ps-num"><span data-count="146" data-prefix="$" data-suffix="K">$146K</span></span>
+            <span class="ps-lab">average revenue lost per year, per phone line</span>
+          </li>
+          <li>
+            <span class="ps-num"><span data-count="2" data-suffix=" min">2 min</span></span>
+            <span class="ps-lab">until most leads forget you and call the next listing</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · SOLUTION ============ -->
+  <section class="solution-section section reveal">
+    <div class="container">
+      <div class="section-meta">
+        <span><span class="num">02 ·</span> The solution</span>
+        <span>One operating layer · four services</span>
       </div>
 
-      <div class="ind-examples-grid">
+      <div class="solution-head">
+        <h2>One AI layer behind your phone, <span class="serif-i">your inbox, and your calendar.</span></h2>
+        <p class="lede">
+          We identify the bottlenecks costing you revenue &mdash; missed calls, slow follow-up,
+          manual scheduling, dispatch chaos &mdash; then design and deploy the systems to solve them.
+          End-to-end. Live in 14 days.
+        </p>
+      </div>
 
-        <!-- EMERGENCY HOME SERVICES — bespoke illustration: pipe + drop + ripple rings -->
-        <article class="ind-ex">
-          <div class="ex-media">
-            <div class="ex-illo ex-illo--emergency" aria-hidden="true">
-              <!-- Plumber actively fixing a leaking faucet — urgent repair in real time -->
-              <video class="ambient" autoplay muted loop playsinline preload="metadata">
-                <source src="https://videos.pexels.com/video-files/9890450/9890450-hd_1920_1080_30fps.mp4" type="video/mp4" />
-                <source src="https://videos.pexels.com/video-files/6079420/6079420-hd_1920_1080_24fps.mp4" type="video/mp4" />
-              </video>
-              <span class="code"><span class="accent-dot"></span>CODE<span class="dash">·</span>P1 EMERGENCY</span>
-              <span class="icon-mark">
-                <!-- minimal phone receiver with two signal arcs -->
-                <svg viewBox="0 0 42 42">
-                  <path d="M 8 10 L 13 10 L 16 18 L 13 21 A 14 14 0 0 0 21 29 L 24 26 L 32 29 L 32 34 A 2 2 0 0 1 30 36 A 22 22 0 0 1 6 12 A 2 2 0 0 1 8 10 Z"/>
-                  <path d="M 28 6 A 8 8 0 0 1 36 14"/>
-                  <path d="M 30 13 A 4 4 0 0 1 34 17"/>
-                </svg>
-              </span>
-              <div class="descriptor"><span>24/7 dispatch</span><span>02:14 EDT</span></div>
-            </div>
-            <span class="ex-tag"><span class="live-dot"></span> Live · 02:14 EDT</span>
-            <span class="ex-place">After-hours · P1</span>
-          </div>
-          <div class="ex-body">
-            <div class="ex-head">
-              <span class="ex-num">Emergency Home Services</span>
-              <span class="ex-meta">Plumbing · HVAC · Restoration · Electrical</span>
-            </div>
-            <div>
-              <h3>The 2:14am call gets answered, triaged, and dispatched.</h3>
-              <p>An after-hours burst pipe gets a real-sounding pickup in under two seconds. The system asks the right questions, flags it as a P1 emergency, and texts your on-call tech the address, problem, and access notes &mdash; before the customer hangs up. Your customer gets an ETA SMS within sixty seconds.</p>
-            </div>
-            <div class="result ex-result">
-              <span class="num"><em>62%</em></span>
-              <span class="lab">of after-hours emergencies converted to booked jobs</span>
-            </div>
-          </div>
+      <div class="solution-grid">
+        <article class="sol-card">
+          <span class="sol-num">01</span>
+          <h3>Call Answering</h3>
+          <p>Inbound calls answered in under two seconds, day or night. Calls qualified, urgent ones routed, the rest scheduled &mdash; in your brand's voice.</p>
+        </article>
+        <article class="sol-card">
+          <span class="sol-num">02</span>
+          <h3>SMS Follow-Up</h3>
+          <p>Every form, text, and call gets a same-minute response, then a sequence that runs until the lead books, replies, or opts out.</p>
+        </article>
+        <article class="sol-card">
+          <span class="sol-num">03</span>
+          <h3>Booking</h3>
+          <p>Customers book themselves into the right slot, with the right tech, on the right day &mdash; instantly, by voice or SMS.</p>
+        </article>
+        <article class="sol-card">
+          <span class="sol-num">04</span>
+          <h3>Workflow Automation</h3>
+          <p>Intake to dispatch, dispatch to invoice, job to follow-up &mdash; running in the background, on the systems you already pay for.</p>
+        </article>
+      </div>
+
+      <div class="solution-cta">
+        <a href="services.html" class="link-arrow">See the full service breakdown <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · INDUSTRIES SERVED ============ -->
+  <section class="industries-clean section bg-gray reveal" id="industries">
+    <div class="container">
+      <div class="section-meta">
+        <span><span class="num">03 ·</span> Industries served</span>
+        <span>Built for four · Tuned for each</span>
+      </div>
+
+      <div class="ind-clean-head">
+        <h2>Four industries. <span class="serif-i">Built for the operators in them.</span></h2>
+      </div>
+
+      <div class="ind-clean-grid">
+
+        <article class="ind-card">
+          <span class="ic-num">I</span>
+          <h3>Emergency Home Services</h3>
+          <span class="ic-meta-line">Plumbing · HVAC · Restoration · Electrical</span>
+          <dl class="ic-list">
+            <div><dt>Problem</dt><dd>After-hours calls go to voicemail. Urgent jobs lost to the next number on Google.</dd></div>
+            <div><dt>AI solution</dt><dd>2-second pickup, severity triage, P1 dispatch SMS to the on-call tech, ETA confirmation to the customer.</dd></div>
+            <div><dt>Outcome</dt><dd><strong>62%</strong> of after-hours emergencies converted to booked jobs.</dd></div>
+          </dl>
+          <a href="niches/emergency-services.html" class="btn ghost ic-btn">Learn more →</a>
         </article>
 
-        <!-- PROPERTY MANAGEMENT — bespoke illustration: apartment-building blocks with lit windows -->
-        <article class="ind-ex">
-          <div class="ex-media">
-            <div class="ex-illo ex-illo--property" aria-hidden="true">
-              <!-- Maintenance team servicing a managed high-rise — scale + active oversight -->
-              <video class="ambient" autoplay muted loop playsinline preload="metadata">
-                <source src="https://videos.pexels.com/video-files/13366662/13366662-hd_1920_1080_60fps.mp4" type="video/mp4" />
-                <source src="https://videos.pexels.com/video-files/8471072/8471072-hd_1920_1080_25fps.mp4" type="video/mp4" />
-              </video>
-              <span class="code"><span class="accent-dot"></span>PORTFOLIO<span class="dash">·</span>1,200 UNITS</span>
-              <span class="icon-mark">
-                <!-- minimal building outline with door + 4 windows -->
-                <svg viewBox="0 0 42 42">
-                  <path d="M 6 36 L 6 14 L 21 6 L 36 14 L 36 36 Z"/>
-                  <line x1="6" y1="36" x2="36" y2="36"/>
-                  <rect x="13" y="20" width="6" height="6"/>
-                  <rect x="23" y="20" width="6" height="6"/>
-                  <path d="M 17 36 L 17 28 L 25 28 L 25 36"/>
-                </svg>
-              </span>
-              <div class="descriptor"><span>Tenant intake</span><span>Lease tours</span></div>
-            </div>
-            <span class="ex-tag"><span class="live-dot"></span> 1,200 units · Live</span>
-            <span class="ex-place">Maintenance · Lease tours</span>
-          </div>
-          <div class="ex-body">
-            <div class="ex-head">
-              <span class="ex-num">Property Management</span>
-              <span class="ex-meta">Tenant intake · Maintenance · Lease tours</span>
-            </div>
-            <div>
-              <h3>Every tenant call answered. Every tour booked.</h3>
-              <p>Tenants reach a real-sounding voice for maintenance &mdash; with photo intake over SMS, severity tagged, work order pushed straight to AppFolio or Buildium. Lease leads get qualified on income, move-in date, and pets, then booked into your leasing agent's calendar without a callback.</p>
-            </div>
-            <div class="result ex-result">
-              <span class="num"><em>4&times;</em></span>
-              <span class="lab">lease tour booking rate vs. callback model</span>
-            </div>
-          </div>
+        <article class="ind-card">
+          <span class="ic-num">II</span>
+          <h3>Property Management</h3>
+          <span class="ic-meta-line">Tenant intake · Maintenance · Lease tours</span>
+          <dl class="ic-list">
+            <div><dt>Problem</dt><dd>Tenants and lease leads call when no one is at the desk. Tours get rescheduled to never.</dd></div>
+            <div><dt>AI solution</dt><dd>24/7 intake with photo upload over SMS, work orders pushed to AppFolio or Buildium, lease tours booked into the agent's calendar.</dd></div>
+            <div><dt>Outcome</dt><dd><strong>4×</strong> lease tour booking rate vs. callback model.</dd></div>
+          </dl>
+          <a href="niches/property-management.html" class="btn ghost ic-btn">Learn more →</a>
         </article>
 
-        <!-- MOVING & RELOCATION — bespoke illustration: stacked boxes + truck silhouette + arrow trail -->
-        <article class="ind-ex">
-          <div class="ex-media">
-            <div class="ex-illo ex-illo--moving" aria-hidden="true">
-              <!-- Movers actively carrying packed boxes — relocation in motion -->
-              <video class="ambient" autoplay muted loop playsinline preload="metadata">
-                <source src="https://videos.pexels.com/video-files/7464109/7464109-hd_1920_1080_30fps.mp4" type="video/mp4" />
-                <source src="https://videos.pexels.com/video-files/9507645/9507645-hd_1920_1080_25fps.mp4" type="video/mp4" />
-              </video>
-              <span class="code"><span class="accent-dot"></span>ROUTE<span class="dash">·</span>BK → UWS</span>
-              <span class="icon-mark">
-                <!-- minimal route from origin marker to destination, with arrow -->
-                <svg viewBox="0 0 42 42">
-                  <circle cx="8" cy="34" r="3"/>
-                  <path d="M 8 34 Q 14 30 18 24 T 28 12"/>
-                  <path d="M 28 12 L 36 8 M 36 8 L 32 14 M 36 8 L 30 4"/>
-                </svg>
-              </span>
-              <div class="descriptor"><span>Estimate · 11 min</span><span>Sun · 23:14</span></div>
-            </div>
-            <span class="ex-tag"><span class="live-dot"></span> Sun · 23:14 EDT</span>
-            <span class="ex-place">Quote in motion</span>
-          </div>
-          <div class="ex-body">
-            <div class="ex-head">
-              <span class="ex-num">Moving &amp; Relocation</span>
-              <span class="ex-meta">Quote intake · Estimate · Booking</span>
-            </div>
-            <div>
-              <h3>Sunday-night quote requests become Monday-morning bookings.</h3>
-              <p>Voice intake captures origin, destination, date, size, stairs, parking. An SMS estimate goes out in eleven minutes with a one-tap booking link. A four-touch follow-up sequence runs over five days &mdash; the lead either books or unsubscribes cleanly. Your sales team never works the weekend.</p>
-            </div>
-            <div class="result ex-result">
-              <span class="num"><em>3.2&times;</em></span>
-              <span class="lab">quote-to-booking conversion · 60-day window</span>
-            </div>
-          </div>
+        <article class="ind-card">
+          <span class="ic-num">III</span>
+          <h3>Moving &amp; Relocation</h3>
+          <span class="ic-meta-line">Quote intake · SMS estimate · Booking</span>
+          <dl class="ic-list">
+            <div><dt>Problem</dt><dd>Sunday-night quote requests get answered Monday afternoon &mdash; after the customer has already booked someone else.</dd></div>
+            <div><dt>AI solution</dt><dd>Voice intake captures the move details, an SMS estimate goes out in eleven minutes, and a four-touch follow-up runs over five days.</dd></div>
+            <div><dt>Outcome</dt><dd><strong>3.2×</strong> quote-to-booking conversion in a 60-day window.</dd></div>
+          </dl>
+          <a href="niches/moving.html" class="btn ghost ic-btn">Learn more →</a>
         </article>
 
-        <!-- FINANCIAL SERVICES — bespoke illustration: bar chart + ascending trend line + grid -->
-        <article class="ind-ex">
-          <div class="ex-media">
-            <div class="ex-illo ex-illo--financial" aria-hidden="true">
-              <!-- Trader watching financial data on monitor — financial intake -->
-              <video class="ambient" autoplay muted loop playsinline preload="metadata">
-                <source src="https://videos.pexels.com/video-files/6963744/6963744-hd_1920_1080_25fps.mp4" type="video/mp4" />
-              </video>
-              <span class="code"><span class="accent-dot"></span>AUM<span class="dash">·</span>$8M+ QUALIFIED</span>
-              <span class="icon-mark">
-                <!-- minimal ascending line with end-arrow -->
-                <svg viewBox="0 0 42 42">
-                  <line x1="6" y1="36" x2="36" y2="36"/>
-                  <line x1="6" y1="6" x2="6" y2="36"/>
-                  <path d="M 10 30 L 18 22 L 24 26 L 36 10"/>
-                  <path d="M 36 10 L 30 10 M 36 10 L 36 16"/>
-                </svg>
-              </span>
-              <div class="descriptor"><span>Audit-ready</span><span>SOC 2 · CCO-approved</span></div>
-            </div>
-            <span class="ex-tag"><span class="live-dot"></span> $8M+ qualified</span>
-            <span class="ex-place">RIA · audit-ready</span>
-          </div>
-          <div class="ex-body">
-            <div class="ex-head">
-              <span class="ex-num">Financial Services</span>
-              <span class="ex-meta">Advisor intake · Qualification · Compliance-ready</span>
-            </div>
-            <div>
-              <h3>Discreet intake. Qualified meetings only. Audit-ready transcripts.</h3>
-              <p>A custom-trained voice tuned to your firm's tone screens prospects on AUM, accreditation, and intent &mdash; then books only the meetings worth your senior advisor's time. Every call recorded and stored to your retention policy. Approved by your compliance officer in week one.</p>
-            </div>
-            <div class="result ex-result">
-              <span class="num"><em>$4.6M</em></span>
-              <span class="lab">new AUM in 90 days · single RIA client</span>
-            </div>
-          </div>
+        <article class="ind-card">
+          <span class="ic-num">IV</span>
+          <h3>Financial Services</h3>
+          <span class="ic-meta-line">Advisor intake · AUM screening · Compliance-ready</span>
+          <dl class="ic-list">
+            <div><dt>Problem</dt><dd>Senior advisors spend hours on prospects who don't qualify. The ones who do get a callback two days late.</dd></div>
+            <div><dt>AI solution</dt><dd>Custom-trained voice screens prospects on AUM, accreditation, and intent &mdash; then books only the meetings worth the senior advisor's time.</dd></div>
+            <div><dt>Outcome</dt><dd><strong>$4.6M</strong> new AUM in 90 days, single RIA client.</dd></div>
+          </dl>
+          <a href="niches/financial-services.html" class="btn ghost ic-btn">Learn more →</a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ============ LIVE NETWORK — animated NYC borough map ============ -->
-  <section class="live-network section reveal">
+  <!-- ============ 5 · HOW IT WORKS ============ -->
+  <section class="how-section section reveal">
     <div class="container">
-      <div class="sec-meta" style="border-bottom-color: var(--border); margin-bottom: 0;">
-        <span><span class="num">·</span> Live network</span>
-        <span>1,247 calls this week · across five boroughs</span>
+      <div class="section-meta">
+        <span><span class="num">04 ·</span> How it works</span>
+        <span>21 days · From audit to live</span>
       </div>
 
-      <div class="network-grid">
-        <div class="network-text">
-          <h2>One number. <span class="serif-i" style="font-family: 'Instrument Serif', serif; font-style: italic; color: var(--signal); font-weight: 400;">Five boroughs.</span> A thousand calls a week.</h2>
-          <p class="lede">Nexus deployments route across the entire NYC metro. Calls land where they should &mdash; the right borough, the right tech, the right hand-off &mdash; without anyone in your office moving a finger.</p>
-          <div class="network-stats">
-            <div><div class="num" data-count="1247">0</div><div class="lab">calls this week</div></div>
-            <div><div class="num" data-count="96" data-suffix="%">0</div><div class="lab">first-touch resolved</div></div>
-            <div><div class="num" data-count="5">0</div><div class="lab">boroughs live</div></div>
-          </div>
-          <div class="network-ticker">
-            <span class="pulse"></span>
-            Now: <span data-ticker='["Bushwick · plumbing P1","UES · lease tour booked","Astoria · HVAC dispatched","Battery Park · advisor intake","Park Slope · move quote sent","Harlem · maintenance ticket","DUMBO · electrical","Midtown · advisor intake"]' style="color: var(--ink); font-weight: 600; margin-left: 4px;">Bushwick · plumbing P1</span>
-          </div>
-        </div>
+      <div class="how-head">
+        <h2>Three weeks. <span class="serif-i">Then it just runs.</span></h2>
+        <p class="lede">A simple, three-step deployment so non-technical owners stay in control of every decision.</p>
+      </div>
 
-        <figure class="borough-map-light" aria-label="Live call map of New York City boroughs">
-          <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img">
-            <g>
-              <path class="land active" d="M232 70 L262 80 L268 110 L262 145 L255 180 L248 215 L238 245 L228 270 L222 235 L228 200 L232 160 L226 120 Z"/>
-              <text class="label" x="246" y="160" text-anchor="middle">Manhattan</text>
-              <path class="land" d="M250 30 L340 28 L360 60 L350 88 L300 92 L262 78 L246 60 Z"/>
-              <text class="label" x="305" y="62" text-anchor="middle">Bronx</text>
-              <path class="land active" d="M295 100 L420 90 L450 130 L455 200 L420 240 L370 245 L320 220 L290 180 L280 140 Z"/>
-              <text class="label" x="375" y="170" text-anchor="middle">Queens</text>
-              <path class="land active" d="M250 240 L320 240 L380 260 L405 305 L370 360 L290 365 L240 340 L218 295 L228 260 Z"/>
-              <text class="label" x="310" y="305" text-anchor="middle">Brooklyn</text>
-              <path class="land" d="M100 270 L180 280 L195 320 L170 360 L120 365 L90 340 L80 305 Z"/>
-              <text class="label" x="138" y="320" text-anchor="middle">Staten Is.</text>
+      <ol class="how-steps">
+        <li class="how-step">
+          <span class="hs-num">01</span>
+          <h3>Audit</h3>
+          <p>We sit on your inbound line for seven days. Map every call type, every pricing rule, every after-hours flow. You get a deployment plan you can challenge line-by-line.</p>
+          <span class="hs-meta">Week 1</span>
+        </li>
+        <li class="how-step">
+          <span class="hs-num">02</span>
+          <h3>Build</h3>
+          <p>Voice agent, SMS workflows, and CRM hand-offs go live in week two. We run side-by-side with your existing line so nothing breaks while we tune.</p>
+          <span class="hs-meta">Week 2</span>
+        </li>
+        <li class="how-step">
+          <span class="hs-num">03</span>
+          <h3>Launch &amp; Improve</h3>
+          <p>Weekly review of every escalation, every miss, every booked job. Your agent gets sharper every week. Tuesday email with the numbers.</p>
+          <span class="hs-meta">Week 3 onward</span>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-              <g><circle class="ring" cx="250" cy="170" r="4"/><circle class="ping" cx="250" cy="170" r="4"/></g>
-              <g><circle class="ring d2" cx="380" cy="200" r="4"/><circle class="ping d2" cx="380" cy="200" r="4"/></g>
-              <g><circle class="ring d3" cx="320" cy="320" r="4"/><circle class="ping d3" cx="320" cy="320" r="4"/></g>
-              <g><circle class="ring d4" cx="245" cy="290" r="4"/><circle class="ping d4" cx="245" cy="290" r="4"/></g>
-              <g><circle class="ring d2" cx="305" cy="55" r="3"/><circle class="ping d2" cx="305" cy="55" r="3"/></g>
-              <g><circle class="ring d3" cx="138" cy="320" r="3"/><circle class="ping d3" cx="138" cy="320" r="3"/></g>
-            </g>
-          </svg>
-          <figcaption class="map-caption">
-            <span><span class="live">●</span> Live · Sample feed</span>
-            <span>Five boroughs · One pipe</span>
+  <!-- ============ 6 · PROOF & TRUST ============ -->
+  <section class="proof-clean section bg-gray reveal">
+    <div class="container">
+      <div class="section-meta">
+        <span><span class="num">05 ·</span> Proof &amp; trust</span>
+        <span>Across 31 active deployments</span>
+      </div>
+
+      <div class="proof-head">
+        <h2>The numbers behind the work.</h2>
+      </div>
+
+      <ul class="proof-numbers">
+        <li>
+          <span class="pn-num"><span data-count="97" data-suffix="%">97%</span></span>
+          <span class="pn-lab">of inbound calls answered in under three seconds &mdash; 31 deployments, 90-day window.</span>
+        </li>
+        <li>
+          <span class="pn-num">4.2&times;</span>
+          <span class="pn-lab">more booked jobs in the first 60 days, against the prior callback baseline.</span>
+        </li>
+        <li>
+          <span class="pn-num"><span data-count="312" data-prefix="$" data-suffix="K">$312K</span></span>
+          <span class="pn-lab">average recovered revenue in Q1, per client &mdash; self-reported, audited at quarter-end.</span>
+        </li>
+      </ul>
+
+      <div class="testimonials">
+        <figure class="quote-card">
+          <blockquote>"We used to lose half our after-hours calls. Now we book them while our crews are still asleep. The system paid for itself in five weeks."</blockquote>
+          <figcaption>
+            <span class="qc-name">Owner</span>
+            <span class="qc-role">Emergency restoration co. · Brooklyn</span>
+          </figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>"The voice sounds like our front-desk lead. Our 1,200-unit portfolio gets the same answer experience whether it's 9am or 1am."</blockquote>
+          <figcaption>
+            <span class="qc-name">Director of Operations</span>
+            <span class="qc-role">Property management firm · Manhattan</span>
+          </figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>"Sunday-night quote requests turn into Monday-morning bookings. We stopped losing weekend leads to bigger competitors."</blockquote>
+          <figcaption>
+            <span class="qc-name">Founder</span>
+            <span class="qc-role">Moving &amp; relocation co. · Queens</span>
           </figcaption>
         </figure>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ 03 · THE COST OF SILENCE — split scroll ============
-       Left: scrolling phone log of missed calls. Right: sticky thesis. -->
-  <section class="cost-section" id="cost">
-    <div class="container" style="padding-block: 80px 32px;">
-      <div class="section-meta">
-        <span><span class="num">03 ·</span> The cost of silence</span>
-        <span>The numbers most operators don't want to look at</span>
+      <div class="logo-strip">
+        <span class="logo-label">Trusted by 31 active deployments across NYC service businesses</span>
+        <ul class="logo-row" aria-label="Selected client industries">
+          <li>Plumbing &amp; HVAC</li>
+          <li>Property mgmt &middot; 1,200+ units</li>
+          <li>Movers &middot; full-service</li>
+          <li>Restoration &amp; remediation</li>
+          <li>Registered investment advisors</li>
+          <li>Electrical contractors</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="cost-track">
-      <div class="cost-sticky">
+      <div class="trust-grid">
+        <article class="founder-card">
+          <span class="eyebrow"><span class="dot"></span> The studio</span>
+          <h3>An AI automation studio in Lower Manhattan.</h3>
+          <p>We build voice and SMS systems for four service industries &mdash; and only four. Every deployment is hand-tuned by our founder and a senior automation engineer. Founded 2023. Operating from 22nd Street, NYC.</p>
+          <a href="about.html" class="link-arrow">Meet the team <span class="arrow">→</span></a>
+        </article>
 
-        <div class="cost-left">
-          <ul class="cost-list" data-cost-list>
-            <li><span class="ts">02:14</span><span class="src">Voice</span><span class="desc"><s>Burst pipe · Williamsburg</s></span><span class="dur">0:42</span><span class="lost">−$840</span></li>
-            <li><span class="ts">02:38</span><span class="src">Voice</span><span class="desc"><s>HVAC · no heat · 2 BR</s></span><span class="dur">1:08</span><span class="lost">−$610</span></li>
-            <li><span class="ts">03:02</span><span class="src">Voice</span><span class="desc"><s>Restoration · ceiling collapse</s></span><span class="dur">0:18</span><span class="lost">−$2,400</span></li>
-            <li><span class="ts">03:47</span><span class="src">SMS</span><span class="desc"><s>Move quote · 2 BR Bushwick → UWS</s></span><span class="dur">−</span><span class="lost">−$1,180</span></li>
-            <li><span class="ts">04:11</span><span class="src">Voice</span><span class="desc"><s>Electrical · breaker · UES</s></span><span class="dur">0:53</span><span class="lost">−$425</span></li>
-            <li><span class="ts">05:33</span><span class="src">Voice</span><span class="desc"><s>Lease tour · West 78th</s></span><span class="dur">0:27</span><span class="lost">−$3,600</span></li>
-            <li><span class="ts">06:08</span><span class="src">Voice</span><span class="desc"><s>HVAC · Astoria · commercial</s></span><span class="dur">2:14</span><span class="lost">−$1,950</span></li>
-            <li><span class="ts">07:42</span><span class="src">Voice</span><span class="desc"><s>Advisor intake · $8M+ AUM</s></span><span class="dur">1:01</span><span class="lost">−$24,000</span></li>
-            <li><span class="ts">08:17</span><span class="src">Voice</span><span class="desc"><s>Plumbing · garbage disposal · DUMBO</s></span><span class="dur">0:34</span><span class="lost">−$320</span></li>
-            <li><span class="ts">09:04</span><span class="src">SMS</span><span class="desc"><s>Move quote · 1 BR Park Slope</s></span><span class="dur">−</span><span class="lost">−$640</span></li>
-            <li><span class="ts">09:48</span><span class="src">Voice</span><span class="desc"><s>HVAC · annual maintenance</s></span><span class="dur">0:51</span><span class="lost">−$480</span></li>
-            <li><span class="ts">10:21</span><span class="src">Voice</span><span class="desc"><s>Restoration · water · basement</s></span><span class="dur">1:38</span><span class="lost">−$3,200</span></li>
-            <li><span class="ts">11:13</span><span class="src">Voice</span><span class="desc"><s>Electrical · panel upgrade · Harlem</s></span><span class="dur">0:42</span><span class="lost">−$2,800</span></li>
-            <li><span class="ts">12:02</span><span class="src">Voice</span><span class="desc"><s>Property mgmt · maintenance · 14 units</s></span><span class="dur">0:29</span><span class="lost">−$5,200</span></li>
-            <li><span class="ts">13:46</span><span class="src">Voice</span><span class="desc"><s>HVAC · refrigerant leak · LIC</s></span><span class="dur">1:17</span><span class="lost">−$960</span></li>
-            <li><span class="ts">14:38</span><span class="src">Voice</span><span class="desc"><s>Move · long-haul · Boston</s></span><span class="dur">0:48</span><span class="lost">−$4,400</span></li>
-            <li><span class="ts">15:51</span><span class="src">SMS</span><span class="desc"><s>Lease inquiry · Fort Greene</s></span><span class="dur">−</span><span class="lost">−$3,200</span></li>
-            <li><span class="ts">17:09</span><span class="src">Voice</span><span class="desc"><s>Restoration · mold · Bronx</s></span><span class="dur">0:33</span><span class="lost">−$6,800</span></li>
-            <li><span class="ts">18:24</span><span class="src">Voice</span><span class="desc"><s>Electrical · outlet replacement</s></span><span class="dur">0:21</span><span class="lost">−$240</span></li>
-            <li><span class="ts">19:47</span><span class="src">Voice</span><span class="desc"><s>HVAC · install consult · Brownstone</s></span><span class="dur">1:54</span><span class="lost">−$8,400</span></li>
-            <li><span class="ts">20:33</span><span class="src">Voice</span><span class="desc"><s>Plumbing · sewage · West Village</s></span><span class="dur">0:46</span><span class="lost">−$1,800</span></li>
-            <li><span class="ts">21:18</span><span class="src">Voice</span><span class="desc"><s>Property mgmt · package locker</s></span><span class="dur">0:14</span><span class="lost">−$0</span></li>
-            <li><span class="ts">22:49</span><span class="src">Voice</span><span class="desc"><s>HVAC · thermostat install</s></span><span class="dur">0:52</span><span class="lost">−$380</span></li>
-            <li><span class="ts">23:37</span><span class="src">Voice</span><span class="desc"><s>Restoration · fire damage assessment</s></span><span class="dur">1:42</span><span class="lost">−$12,400</span></li>
-            <li><span class="ts">00:14</span><span class="src">Voice</span><span class="desc"><s>Plumbing · leak · ceiling · Tribeca</s></span><span class="dur">0:39</span><span class="lost">−$1,100</span></li>
+        <article class="security-card">
+          <span class="eyebrow"><span class="dot"></span> Security &amp; privacy</span>
+          <h3>Compliance built in, not bolted on.</h3>
+          <ul class="sec-list">
+            <li><strong>SOC 2-ready</strong> &mdash; architecture and controls aligned to SOC 2 Type II.</li>
+            <li><strong>TCPA compliant</strong> &mdash; consent-based outbound SMS, full opt-out support.</li>
+            <li><strong>CCO-approved</strong> &mdash; deployments reviewed by your compliance officer in week one.</li>
+            <li><strong>Audit-ready</strong> &mdash; every call recorded and stored to your retention policy.</li>
           </ul>
-        </div>
-
-        <div class="cost-right">
-          <span class="eyebrow"><span class="dot"></span> 38% missed · industry avg</span>
-          <h2>Every voicemail is a bill <em>you'll never send.</em></h2>
-          <p class="lede">
-            The average service business misses 38% of inbound calls. At $400 per job,
-            that's <strong style="color:var(--alert)">$146,000 a year</strong> on the floor.
-            Most owners can name the number. Few can stop it.
-          </p>
-          <div class="figures">
-            <div>
-              <div class="num" data-count="146000" data-prefix="$">$0</div>
-              <div class="lab">avg. lost / yr · 1 line</div>
-            </div>
-            <div>
-              <div class="num" data-count="38" data-suffix="%">0%</div>
-              <div class="lab">inbound · unanswered</div>
-            </div>
-          </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ 03 · THE SYSTEM — interactive flow ============ -->
-  <section class="system-section section" id="system">
+  <!-- ============ 7 · FINAL CTA ============ -->
+  <section class="cta-clean reveal">
     <div class="container">
-      <div class="section-meta">
-        <span><span class="num">04 ·</span> The system</span>
-        <span>From ring to revenue · 6 nodes · 2 minutes</span>
+      <h2>Stop missing the calls <span class="serif-i">that pay you.</span></h2>
+      <p class="lede">A 20-minute walkthrough on your industry, your call volume, your stack. No deck. No marketing intro.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn signal">Book a strategy call →</a>
+        <a href="services.html" class="btn ghost">See services</a>
       </div>
-
-      <div>
-        <h2 style="max-width: 18ch;">A voice that picks up. A workflow that doesn't <span class="serif-i">sleep.</span></h2>
-        <p class="lede" style="margin-top: 20px; max-width: 60ch;">Click any node to see what runs underneath. The whole pipeline ships in 14 days, deployed alongside your existing line so nothing breaks.</p>
-      </div>
-
-      <div class="flow" data-flow>
-        <button class="flow-node active" data-node="0">
-          <span class="step">01</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
-          <h4>Ring</h4>
-          <p>Call lands on your line</p>
-          <span class="arrow">→</span>
-        </button>
-        <button class="flow-node" data-node="1">
-          <span class="step">02</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 12c0-1 1-2 2-2h2v8H5a2 2 0 0 1-2-2zM21 12c0-1-1-2-2-2h-2v8h2a2 2 0 0 0 2-2zM5 10a7 7 0 0 1 14 0"/></svg></span>
-          <h4>Answer</h4>
-          <p>AI picks up in 2s</p>
-          <span class="arrow">→</span>
-        </button>
-        <button class="flow-node" data-node="2">
-          <span class="step">03</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-          <h4>Qualify</h4>
-          <p>Triages in 30s</p>
-          <span class="arrow">→</span>
-        </button>
-        <button class="flow-node" data-node="3">
-          <span class="step">04</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
-          <h4>Book</h4>
-          <p>Writes to your CRM</p>
-          <span class="arrow">→</span>
-        </button>
-        <button class="flow-node" data-node="4">
-          <span class="step">05</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <h4>Confirm</h4>
-          <p>SMS within 60s</p>
-          <span class="arrow">→</span>
-        </button>
-        <button class="flow-node" data-node="5">
-          <span class="step">06</span>
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9M3 12V4M3 12h8"/></svg></span>
-          <h4>Follow up</h4>
-          <p>4-touch sequence</p>
-          <span class="arrow">→</span>
-        </button>
-      </div>
-
-      <div class="flow-detail" data-flow-detail>
-        <div class="copy">
-          <h5 data-detail-step>Step 01 · Ring</h5>
-          <h3 data-detail-title>Your line. Your number. Your brand.</h3>
-          <p data-detail-copy>No port. No replacement. Nexus runs underneath the line you already publish — your customer dials the number on your truck and hears the voice you trained.</p>
-        </div>
-        <div class="demo" data-detail-demo>
-<span class="ts">02:14:03 EDT</span><br/>
-&gt; <span class="you">Inbound &middot; 718-555-0142</span><br/>
-&gt; <span class="ai">Caller-id &middot; "Marcus T. (existing customer)"</span><br/>
-&gt; <span class="ai">Routing rule &middot; after-hours · P1 emergency only</span><br/>
-&gt; <span class="ai">Answer &middot; 1.8s</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NYC · FIVE BOROUGHS STRIP ============
-       Five borough photos with live call counts. Hover lifts grayscale.
-       Image swap: replace each <img src="..."> with custom photography. -->
-  <section class="city-strip">
-    <div class="container">
-      <div class="strip-head">
-        <span class="lead">Now serving across the <em>five boroughs.</em></span>
-        <span><span class="num">●</span>&nbsp;&nbsp;Live · 1,247 calls · this week</span>
-      </div>
-    </div>
-    <div class="boroughs">
-      <div class="borough">
-        <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=70" alt="Manhattan skyline" loading="lazy" />
-        <div class="label-block">
-          <span class="name">Manhattan</span>
-          <span class="count"><strong>412</strong>calls / wk</span>
-        </div>
-      </div>
-      <div class="borough">
-        <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&q=70" alt="Brooklyn at night" loading="lazy" />
-        <div class="label-block">
-          <span class="name">Brooklyn</span>
-          <span class="count"><strong>368</strong>calls / wk</span>
-        </div>
-      </div>
-      <div class="borough">
-        <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&h=1500&q=70" alt="Queens street" loading="lazy" />
-        <div class="label-block">
-          <span class="name">Queens</span>
-          <span class="count"><strong>241</strong>calls / wk</span>
-        </div>
-      </div>
-      <div class="borough">
-        <img src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=1200&h=1500&q=70&crop=left" alt="The Bronx" loading="lazy" />
-        <div class="label-block">
-          <span class="name">The Bronx</span>
-          <span class="count"><strong>148</strong>calls / wk</span>
-        </div>
-      </div>
-      <div class="borough">
-        <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&h=1500&q=70&crop=right" alt="Staten Island view" loading="lazy" />
-        <div class="label-block">
-          <span class="name">Staten Is.</span>
-          <span class="count"><strong>78</strong>calls / wk</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The previous "What we build" video-card section was removed.
-       Its content now lives in the new top-of-page WHAT WE DO section,
-       which is more explicit and better serves clarity for high-end buyers. -->
-  <section class="section container" style="display:none">
-    <div>
-
-      <!-- VOICE AGENTS — loop suggestion: closeup phone + soundwave overlay -->
-      <a href="services.html" class="svc-card">
-        <img class="poster" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=70" alt="" />
-        <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=70">
-          <source src="https://videos.pexels.com/video-files/4990246/4990246-uhd_2560_1440_24fps.mp4" type="video/mp4" />
-        </video>
-        <div class="arrow">→</div>
-        <div class="body">
-          <span class="num">01 · AI Voice Agents</span>
-          <h3>Sound human. Never sleep. Never miss.</h3>
-          <p class="one">A custom-trained voice that knows your services, pricing, and after-hours rules. Hands off when it should. Writes the call into your CRM.</p>
-        </div>
-      </a>
-
-      <!-- SMS WORKFLOWS — loop suggestion: closeup phone screen with messages -->
-      <a href="services.html" class="svc-card">
-        <img class="poster" src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1600&q=70" alt="" />
-        <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1600&q=70">
-          <source src="https://videos.pexels.com/video-files/3015527/3015527-uhd_2560_1440_24fps.mp4" type="video/mp4" />
-        </video>
-        <div class="arrow">→</div>
-        <div class="body">
-          <span class="num">02 · SMS Workflows</span>
-          <h3>Follow up faster than your fastest rep.</h3>
-          <p class="one">Instant confirmations, ETAs, photo intake, reminders, re-engagement. Two-way conversations that hand off cleanly to humans when it matters.</p>
-        </div>
-      </a>
-
-      <!-- ROUTING & QUALIFICATION — loop suggestion: dashboard / intent flow -->
-      <a href="services.html" class="svc-card">
-        <img class="poster" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=70" alt="" />
-        <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=70">
-          <source src="https://videos.pexels.com/video-files/7579916/7579916-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
-        <div class="arrow">→</div>
-        <div class="body">
-          <span class="num">03 · Lead Routing & Qualification</span>
-          <h3>The wrong leads stop wasting your time.</h3>
-          <p class="one">Intent scoring across SMS and email. Auto-pause when a lead books, opts out, or replies. Only the meetings worth taking land in your inbox.</p>
-        </div>
-      </a>
-
-      <!-- INTERNAL AUTOMATION — NYC office / lower-manhattan workspace -->
-      <a href="services.html" class="svc-card">
-        <img class="poster" src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1600&q=70" alt="" />
-        <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=70">
-          <source src="https://videos.pexels.com/video-files/7579788/7579788-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
-        <div class="arrow">→</div>
-        <div class="body">
-          <span class="num">04 · Internal Automation</span>
-          <h3>Your team stops doing what software should do.</h3>
-          <p class="one">CRM-to-dispatch, dispatch-to-tech, job-to-invoice. Two-way sync across the systems you already pay for. No rip-and-replace.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ============ 05 · INDUSTRIES — horizontal scroll-jack ============
-       4 full-bleed panels, each with industry-specific b-roll loop. -->
-  <section class="industries-section" id="industries" data-stacked>
-    <div class="container" style="padding-block: 80px 32px;">
-      <div class="section-meta">
-        <span><span class="num">·</span> Built for your industry</span>
-        <span>Scroll → through the four</span>
-      </div>
-    </div>
-
-    <div class="industries-track" data-ind-track>
-      <div class="industries-sticky">
-        <div class="industries-rail" data-ind-rail>
-
-          <!-- PANEL 1 · EMERGENCY HOME SERVICES — NYC street at night (rain/sodium light) -->
-          <article class="ind-panel">
-            <img class="poster" src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2200&q=70" alt="" />
-            <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2200&q=70">
-              <source src="https://videos.pexels.com/video-files/3196283/3196283-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
-            <div class="body">
-              <div class="top">
-                <span><span class="index">Ⅰ ·</span> Emergency Home Services</span>
-                <span>Plumbing · HVAC · Electrical · Restoration</span>
-              </div>
-              <div class="center-text">
-                <h2>Burst pipes don't wait for business hours.</h2>
-                <span class="outcome">Restoration co. cut response time <strong>14 min → 11 sec</strong></span>
-              </div>
-              <div class="bottom">
-                <span class="vert">After-hours capture · 62%</span>
-                <a href="niches/emergency-services.html" class="btn signal">Read the playbook →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PANEL 2 · PROPERTY MANAGEMENT — Manhattan apartment building / brownstone block -->
-          <article class="ind-panel">
-            <img class="poster" src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=2200&q=70" alt="" />
-            <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=2200&q=70">
-              <source src="https://videos.pexels.com/video-files/2253969/2253969-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-            </video>
-            <div class="body">
-              <div class="top">
-                <span><span class="index">Ⅱ ·</span> Property Management</span>
-                <span>Tenant intake · Maintenance · Lease tours</span>
-              </div>
-              <div class="center-text">
-                <h2>A front desk that never goes home.</h2>
-                <span class="outcome">1,200-unit operator: <strong>4× lease tour booking rate</strong></span>
-              </div>
-              <div class="bottom">
-                <span class="vert">Multilingual · 4 languages</span>
-                <a href="niches/property-management.html" class="btn signal">Read the playbook →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PANEL 3 · MOVING & RELOCATION — NYC street with movement / brownstone block -->
-          <article class="ind-panel">
-            <img class="poster" src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2200&q=70" alt="" />
-            <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2200&q=70">
-              <source src="https://videos.pexels.com/video-files/4434286/4434286-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-            </video>
-            <div class="body">
-              <div class="top">
-                <span><span class="index">Ⅲ ·</span> Moving & Relocation</span>
-                <span>Quote intake · SMS estimate · Booking</span>
-              </div>
-              <div class="center-text">
-                <h2>Sunday-night quotes. Monday-morning bookings.</h2>
-                <span class="outcome">NYC mover: <strong>3.2× quote-to-book conversion</strong></span>
-              </div>
-              <div class="bottom">
-                <span class="vert">Estimate &lt; 11 min</span>
-                <a href="niches/moving.html" class="btn signal">Read the playbook →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PANEL 4 · FINANCIAL SERVICES — Wall Street / Lower Manhattan financial district -->
-          <article class="ind-panel">
-            <img class="poster" src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2200&q=70" alt="" />
-            <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2200&q=70">
-              <source src="https://videos.pexels.com/video-files/7578553/7578553-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-            </video>
-            <div class="body">
-              <div class="top">
-                <span><span class="index">Ⅳ ·</span> Financial Services</span>
-                <span>Advisor intake · AUM screening · Compliance-ready</span>
-              </div>
-              <div class="center-text">
-                <h2>Discreet intake. Audit-ready follow-up.</h2>
-                <span class="outcome">Midtown RIA: <strong>$4.6M new AUM in 90 days</strong></span>
-              </div>
-              <div class="bottom">
-                <span class="vert">SOC 2 · CCO-approved</span>
-                <a href="niches/financial-services.html" class="btn signal">Read the playbook →</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-        <div class="industries-progress"><div class="bar" data-ind-bar></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 06 · PROOF — sticky-stacked stats ============ -->
-  <section class="proof-section" id="proof">
-    <div class="container" style="padding-block: 80px 32px;">
-      <div class="section-meta">
-        <span><span class="num">05 ·</span> Proof</span>
-        <span>Across active deployments</span>
-      </div>
-    </div>
-
-    <div class="proof-stack">
-      <div class="proof-row"><div class="container">
-        <div class="num"><em>97%</em></div>
-        <p class="lab">of inbound calls answered in under 3 seconds.</p>
-        <p class="meta">Sample · 31 deployments · 90-day window</p>
-      </div></div>
-      <div class="proof-row"><div class="container">
-        <div class="num"><em>4.2×</em></div>
-        <p class="lab">more booked jobs in the first 60 days, against the prior callback baseline.</p>
-        <p class="meta">Mean across home-services & moving</p>
-      </div></div>
-      <div class="proof-row"><div class="container">
-        <div class="num"><em>$312K</em></div>
-        <p class="lab">recovered revenue in Q1, average client.</p>
-        <p class="meta">Self-reported, audited at quarter-end</p>
-      </div></div>
-    </div>
-  </section>
-
-  <!-- ============ NYC · CITY DIVIDER (full-bleed photo with overlay) ============ -->
-  <section class="city-divider">
-    <img src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2400&q=70" alt="Manhattan rooftops at golden hour" />
-    <div class="container">
-      <span class="pill"><span class="dot"></span> Lower Manhattan · 22nd Street</span>
-      <h2>Built where business <em>never sleeps.</em></h2>
-      <div class="meta">
-        <span>Studio · NY 10010</span>
-        <span class="hide-mobile">Operating · Nationwide</span>
-        <span>Dispatch №024 · April 2026</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 07 · HOW IT WORKS — terminal-style 3 steps ============ -->
-  <section class="terminal-section section">
-    <div class="container">
-      <div class="section-meta">
-        <span><span class="num">06 ·</span> How it works</span>
-        <span>21 days · Audit → Build → Scale</span>
-      </div>
-
-      <div>
-        <h2 style="max-width: 16ch;">Three weeks. <span class="serif-i">Then it just runs.</span></h2>
-      </div>
-
-      <div class="terminal" data-terminal>
-        <div class="terminal-bar">
-          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-          <span class="title">nexus@horizon ~ &mdash; deploy.sh</span>
-        </div>
-        <div class="terminal-body">
-          <span class="line"><span class="prompt">$</span><span class="step-id">01 ·</span> <span data-typed="audit">audit --shadow your-line --duration 7d</span></span>
-          <span class="out">We sit on your inbound line for 7 days. Map every call type, every pricing rule, every after-hours flow. <em>Output: a deployment plan you can challenge line-by-line.</em></span>
-
-          <span class="line"><span class="prompt">$</span><span class="step-id">02 ·</span> <span data-typed="build">build --voice your-brand --sms workflows --ship 14d</span></span>
-          <span class="out">Voice agent, SMS workflows, and CRM hand-offs go live in week two. We run side-by-side with your existing line so nothing breaks while we tune. <em>Live in 14 days.</em></span>
-
-          <span class="line"><span class="prompt">$</span><span class="step-id">03 ·</span> <span data-typed="scale">scale --tune weekly --review every-tuesday</span></span>
-          <span class="out">Weekly review of every escalation, every miss, every booked job. Your agent gets sharper every week. <em>Tuesday email with the numbers.</em><span class="cursor"></span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 08 · CLOSING — ambient NYC video background ============ -->
-  <section class="closing-cinema" id="demo">
-    <div class="closing-bg" aria-hidden="true">
-      <img class="poster" src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2400&q=70" alt="" />
-      <video autoplay muted loop playsinline preload="metadata"
-             poster="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2400&q=70">
-        <source src="https://videos.pexels.com/video-files/2034115/2034115-hd_1920_1080_30fps.mp4" type="video/mp4" />
-        <source src="https://videos.pexels.com/video-files/11504763/11504763-hd_1920_1080_30fps.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="container">
-      <h2>Stop missing the calls <em>that pay you.</em></h2>
-      <p class="sub">A 20-minute walkthrough on your industry, your call volume, your stack.</p>
-
-      <form class="cta-form" action="#" method="post" novalidate>
-        <input type="email" name="email" placeholder="you@yourbusiness.com" required aria-label="Work email" />
-        <button type="submit">Start →</button>
-      </form>
-      <p class="sub" style="margin-top: 18px; font-size: 13px; color: var(--text-3);">No deck. No marketing intro. We respond in under 4 business hours.</p>
+      <p class="cta-meta">We respond in under 4 business hours.</p>
     </div>
   </section>
 
@@ -1163,26 +392,26 @@
         <ul>
           <li><a href="niches/emergency-services.html">Emergency Home Services</a></li>
           <li><a href="niches/property-management.html">Property Management</a></li>
-          <li><a href="niches/moving.html">Moving & Relocation</a></li>
+          <li><a href="niches/moving.html">Moving &amp; Relocation</a></li>
           <li><a href="niches/financial-services.html">Financial Services</a></li>
         </ul>
       </div>
       <div>
-        <h5>Platform</h5>
+        <h5>Company</h5>
         <ul>
-          <li><a href="services.html">Voice agents</a></li>
-          <li><a href="services.html">SMS workflows</a></li>
-          <li><a href="services.html">Lead routing</a></li>
-          <li><a href="services.html">Internal automation</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Studio</h5>
-        <ul>
+          <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="mailto:hello@nexusaihorizon.com">hello@nexusaihorizon.com</a></li>
-          <li><a href="contact.html">Book a strategy call →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get started</h5>
+        <ul>
+          <li><a href="contact.html">Book a strategy call</a></li>
+          <li><a href="#industries">Industries we serve</a></li>
+          <li><a href="#" aria-disabled="true">Privacy policy</a></li>
+          <li><a href="#" aria-disabled="true">Terms</a></li>
         </ul>
       </div>
     </div>

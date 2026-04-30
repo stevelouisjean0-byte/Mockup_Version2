@@ -4,8 +4,17 @@
   // ----- Mobile menu --------------------------------------------------
   const burger = document.querySelector('.mast-burger');
   const closer = document.querySelector('.mob-close');
-  const open  = () => document.body.classList.add('menu-open');
-  const close = () => document.body.classList.remove('menu-open');
+  const menu   = document.querySelector('.mobile-menu');
+  const open  = () => {
+    document.body.classList.add('menu-open');
+    if (burger) burger.setAttribute('aria-expanded', 'true');
+    if (menu)   menu.setAttribute('aria-hidden', 'false');
+  };
+  const close = () => {
+    document.body.classList.remove('menu-open');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+    if (menu)   menu.setAttribute('aria-hidden', 'true');
+  };
   if (burger) burger.addEventListener('click', open);
   if (closer) closer.addEventListener('click', close);
   document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', close));
@@ -25,7 +34,9 @@
       const d = new Date();
       const h = String(d.getHours()).padStart(2,'0');
       const m = String(d.getMinutes()).padStart(2,'0');
-      ts.textContent = `${h}:${m} EST`;
+      // EDT in DST (Mar–Nov), EST otherwise. Cheap UTC-offset check from the user's clock.
+      const tz = -new Date().getTimezoneOffset() / 60 === -4 ? 'EDT' : 'EST';
+      ts.textContent = `${h}:${m} ${tz}`;
     };
     tick(); setInterval(tick, 30000);
   }
