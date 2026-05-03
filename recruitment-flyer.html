@@ -69,18 +69,15 @@
       padding: 32px 64px 0;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .mark { display: inline-flex; align-items: center; gap: 14px; }
+    .mark { display: inline-flex; align-items: center; gap: 16px; }
     .mark .seal {
-      width: 36px; height: 36px;
-      background: var(--ink);
-      border-radius: 9px;
+      width: 64px; height: 36px;
       display: inline-grid; place-items: center;
-      box-shadow: 0 6px 20px -6px rgba(8,9,13,.35);
     }
-    .mark .seal svg { width: 22px; height: 22px; display: block; }
+    .mark .seal svg { width: 100%; height: 100%; display: block; }
     .mark .word {
       font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-size: 16.5px; font-weight: 600;
+      font-size: 17px; font-weight: 700;
       letter-spacing: -0.018em; color: var(--ink);
       line-height: 1;
     }
@@ -88,8 +85,8 @@
       display: block;
       font-family: 'JetBrains Mono', ui-monospace, monospace;
       font-size: 9px; font-weight: 500;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: var(--text-3); margin-top: 3px;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-3); margin-top: 4px;
     }
     .header .meta {
       display: inline-flex; align-items: center; gap: 14px;
@@ -392,12 +389,10 @@
     }
     .footer-mark .left { display: inline-flex; align-items: center; gap: 12px; }
     .footer-mark .seal-foot {
-      width: 16px; height: 16px;
-      background: var(--ink);
-      border-radius: 4px;
+      width: 32px; height: 18px;
       display: inline-grid; place-items: center;
     }
-    .footer-mark .seal-foot svg { width: 10px; height: 10px; }
+    .footer-mark .seal-foot svg { width: 100%; height: 100%; display: block; }
     .footer-mark .tags { display: inline-flex; gap: 16px; }
   </style>
 </head>
@@ -411,9 +406,41 @@
     <header class="header">
       <div class="mark">
         <span class="seal" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 5 19 V 6 L 17 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="20" cy="6" r="1.7" fill="#5479DD"/>
+          <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nx-grad-h" x1="0%" y1="20%" x2="100%" y2="80%">
+                <stop offset="0%"  stop-color="#5BA3FF"/>
+                <stop offset="40%" stop-color="#1E4FBF"/>
+                <stop offset="100%" stop-color="#08164A"/>
+              </linearGradient>
+              <linearGradient id="nx-grad-h2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"  stop-color="#08164A"/>
+                <stop offset="100%" stop-color="#1E4FBF"/>
+              </linearGradient>
+            </defs>
+            <!-- Infinity ribbon · twin-loop with crossover shading -->
+            <path d="M 12 28
+                     C 12 8, 38 8, 50 28
+                     C 62 48, 88 48, 88 28
+                     C 88 8, 62 8, 50 28
+                     C 38 48, 12 48, 12 28 Z"
+                  fill="none"
+                  stroke="url(#nx-grad-h)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <!-- Inner crossover shadow (gives 3D twist) -->
+            <path d="M 44 24 Q 50 28 56 32"
+                  fill="none"
+                  stroke="url(#nx-grad-h2)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  opacity="0.95"/>
+            <!-- Two connection nodes on right loop -->
+            <line x1="74" y1="18" x2="86" y2="22"
+                  stroke="#FFFFFF" stroke-width="1.2" opacity="0.95"/>
+            <circle cx="74" cy="18" r="2.4" fill="#FFFFFF"/>
+            <circle cx="86" cy="22" r="2.4" fill="#FFFFFF"/>
           </svg>
         </span>
         <span class="word">Nexus AI Horizon<span class="small">AI Consulting · Automation</span></span>
@@ -516,9 +543,27 @@
     <div class="footer-mark">
       <span class="left">
         <span class="seal-foot" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 5 19 V 6 L 17 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="20" cy="6" r="1.8" fill="#5479DD"/>
+          <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nx-grad-f" x1="0%" y1="20%" x2="100%" y2="80%">
+                <stop offset="0%"  stop-color="#5BA3FF"/>
+                <stop offset="40%" stop-color="#1E4FBF"/>
+                <stop offset="100%" stop-color="#08164A"/>
+              </linearGradient>
+            </defs>
+            <path d="M 12 28
+                     C 12 8, 38 8, 50 28
+                     C 62 48, 88 48, 88 28
+                     C 88 8, 62 8, 50 28
+                     C 38 48, 12 48, 12 28 Z"
+                  fill="none"
+                  stroke="url(#nx-grad-f)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <line x1="74" y1="18" x2="86" y2="22" stroke="#FFFFFF" stroke-width="1.2" opacity="0.9"/>
+            <circle cx="74" cy="18" r="2.4" fill="#FFFFFF"/>
+            <circle cx="86" cy="22" r="2.4" fill="#FFFFFF"/>
           </svg>
         </span>
         <span>Nexus AI Horizon · AI Consulting &amp; Automation</span>
