@@ -4,499 +4,526 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1200" />
   <title>Nexus AI Horizon — AI Talent Recruitment</title>
-  <meta name="description" content="Nexus AI Horizon is hiring AI engineers, ML developers, automation specialists, prompt engineers, and data analysts to build real systems for real clients." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --navy:        #0B1B3F;
-      --navy-deep:   #060F26;
+      --navy:        #0A1530;
+      --navy-2:      #0F1B3D;
       --signal:      #1F3A8A;
-      --signal-2:    #2D4FBF;
-      --ink:         #0E1118;
-      --text:        #2A2D38;
-      --text-2:      #5A5D67;
-      --text-3:      #8B8E97;
-      --silver:      #C8CBD2;
-      --silver-2:    #E4E6EB;
-      --paper:       #FAFAFC;
-      --paper-2:     #F2F3F6;
-      --gold:        #C9A87C;
+      --signal-lite: #5479DD;
+      --ink:         #08090D;
+      --text:        #20232C;
+      --text-2:      #4A4D58;
+      --text-3:      #777A85;
+      --text-4:      #A8AAB1;
+      --silver:      #C5C7CD;
+      --silver-2:    #DCDEE3;
+      --silver-3:    #E8EAEE;
+      --paper:       #F8F9FB;
+      --paper-2:     #F1F2F6;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     html, body {
-      background: #E1E3E9;
-      font-family: 'Geist', -apple-system, system-ui, sans-serif;
+      background: #DCDEE3;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      font-feature-settings: 'cv11', 'ss01', 'ss03';
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
-    /* Stage / canvas — fixed flyer geometry */
     body { display: grid; place-items: center; min-height: 100vh; padding: 40px 20px; }
+
     .flyer {
       width: 1200px;
       height: 1500px;
-      background: var(--paper);
+      background: linear-gradient(180deg, var(--paper) 0%, #FDFDFE 30%, var(--paper) 100%);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 40px 100px -20px rgba(11,27,63,.35), 0 12px 28px -10px rgba(11,27,63,.18);
+      box-shadow:
+        0 50px 120px -30px rgba(8,9,13,.40),
+        0 14px 40px -12px rgba(8,9,13,.18),
+        inset 0 0 0 1px rgba(8,9,13,.04);
       color: var(--ink);
     }
 
-    /* ====== TOP BAND — hero photo + overlay ====== */
-    .hero {
-      position: relative;
-      height: 520px;
-      background: var(--navy);
-      overflow: hidden;
-    }
-    .hero img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: brightness(.55) saturate(1.05) contrast(1.05);
-    }
-    .hero::before {
-      content: "";
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(6,15,38,.30) 0%, rgba(6,15,38,.55) 60%, rgba(6,15,38,.85) 100%),
-        linear-gradient(120deg, rgba(31,58,138,.25), rgba(0,0,0,0) 60%);
-      z-index: 1;
-    }
-    .hero::after {
-      content: "";
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(800px 380px at 12% 18%, rgba(255,255,255,.06), rgba(255,255,255,0) 70%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 70px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 70px);
-      z-index: 2;
-      mix-blend-mode: screen;
+    /* TOP STRIP */
+    .top-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--ink) 0%, var(--signal) 60%, var(--ink) 100%);
     }
 
-    .hero-inner {
-      position: relative; z-index: 3;
-      height: 100%;
-      padding: 60px 80px;
-      display: flex; flex-direction: column;
-      justify-content: space-between;
-      color: #fff;
+    /* HEADER */
+    .header {
+      padding: 32px 64px 0;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    .topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      letter-spacing: .14em; text-transform: uppercase;
-      font-family: 'Geist Mono', ui-monospace, monospace;
-      font-size: 12px;
-      color: rgba(255,255,255,.78);
-    }
-    .mark {
-      display: inline-flex; align-items: center; gap: 14px;
-    }
+    .mark { display: inline-flex; align-items: center; gap: 14px; }
     .mark .seal {
       width: 36px; height: 36px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #ffffff 0%, #DCE3F1 100%);
+      background: var(--ink);
+      border-radius: 9px;
       display: inline-grid; place-items: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,.18), inset 0 0 0 1px rgba(0,0,0,.04);
+      box-shadow: 0 6px 20px -6px rgba(8,9,13,.35);
     }
     .mark .seal svg { width: 22px; height: 22px; display: block; }
     .mark .word {
-      font-family: 'Geist', sans-serif;
-      font-size: 18px; font-weight: 600; letter-spacing: -0.012em;
-      color: #fff;
-      text-transform: none;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 16.5px; font-weight: 600;
+      letter-spacing: -0.018em; color: var(--ink);
+      line-height: 1;
     }
-    .topbar .meta {
-      display: inline-flex; align-items: center; gap: 12px;
+    .mark .word .small {
+      display: block;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-3); margin-top: 3px;
     }
-    .topbar .pulse {
+    .header .meta {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-3); font-weight: 500;
+    }
+    .header .meta .pulse {
       display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink); font-weight: 600;
     }
-    .topbar .pulse::before {
+    .header .meta .pulse::before {
       content: ""; width: 7px; height: 7px; border-radius: 999px;
-      background: #6FE9B0;
-      box-shadow: 0 0 10px rgba(111,233,176,.85);
+      background: #14B870;
+      box-shadow: 0 0 0 4px rgba(20,184,112,.18);
     }
+    .header .meta .sep { color: var(--silver); }
 
-    .hero-headline {
-      max-width: 880px;
+    /* LEAD */
+    .lead {
+      padding: 44px 64px 0;
     }
-    .hero-eyebrow {
-      font-family: 'Geist Mono', monospace;
-      font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
-      color: #9DB2E8;
-      margin-bottom: 22px;
-      display: inline-flex; align-items: center; gap: 12px;
-    }
-    .hero-eyebrow::before {
-      content: ""; width: 38px; height: 1px; background: rgba(157,178,232,.55);
-    }
-    .hero-title {
-      font-family: 'Geist', sans-serif;
-      font-weight: 600;
-      font-size: 86px;
-      line-height: .98;
-      letter-spacing: -0.035em;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-    .hero-title .serif {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      color: #DCE3F1;
-    }
-    .hero-sub {
-      font-size: 22px;
-      line-height: 1.4;
-      color: rgba(255,255,255,.86);
-      max-width: 720px;
-      font-weight: 400;
-    }
-
-    .hero-bottom {
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(255,255,255,.65);
-    }
-    .hero-bottom .badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 9px 16px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-    }
-    .hero-bottom .badge .dot {
-      width: 6px; height: 6px; border-radius: 999px; background: #6FE9B0;
-      box-shadow: 0 0 8px rgba(111,233,176,.8);
-    }
-
-    /* ====== BODY ====== */
-    .body {
-      padding: 56px 80px 0;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 32px;
-      padding-bottom: 36px;
-      border-bottom: 1px solid var(--silver-2);
-    }
-    .about .label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--text-3);
-      font-weight: 600;
-    }
-    .about .body-text {
-      font-size: 20px;
-      line-height: 1.45;
-      color: var(--text);
-      letter-spacing: -0.005em;
-      font-weight: 400;
-    }
-    .about .body-text strong { color: var(--ink); font-weight: 600; }
-
-    /* Three-column block */
-    .blocks {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      margin-top: 40px;
-    }
-    .block {
-      padding: 0 28px;
-      border-right: 1px solid var(--silver-2);
-    }
-    .block:first-child { padding-left: 0; }
-    .block:last-child { padding-right: 0; border-right: 0; }
-
-    .block .block-num {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    .lead .eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase;
       color: var(--signal);
       font-weight: 600;
-      display: flex; align-items: center; gap: 10px;
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-bottom: 24px;
     }
-    .block .block-num::before {
-      content: ""; width: 18px; height: 1px; background: var(--signal);
+    .lead .eyebrow::before {
+      content: ""; width: 36px; height: 1px; background: var(--signal);
     }
-    .block h3 {
-      font-family: 'Geist', sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
+    .lead h1 {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 124px;
+      line-height: .94;
+      letter-spacing: -0.045em;
       color: var(--ink);
-      margin: 14px 0 22px;
-      line-height: 1.1;
     }
-    .block ul { list-style: none; }
-    .block li {
-      font-size: 15.5px;
+    .lead h1 .accent {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400; font-style: italic;
+      font-size: 130px;
+      letter-spacing: -0.022em;
+      color: var(--signal);
+    }
+    .lead .deck {
+      margin-top: 26px;
+      max-width: 720px;
+      font-size: 19px; font-weight: 400;
       line-height: 1.45;
-      color: var(--text);
-      padding: 10px 0 10px 22px;
+      color: var(--text-2);
+      letter-spacing: -0.005em;
+    }
+    .lead .deck strong { color: var(--ink); font-weight: 600; }
+
+    /* HERO STRIP */
+    .hero-strip {
+      margin: 36px 64px 0;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
       position: relative;
-      border-bottom: 1px solid var(--silver-2);
+      background: var(--navy);
+      box-shadow: 0 20px 50px -18px rgba(8,9,13,.45), inset 0 0 0 1px rgba(255,255,255,.06);
     }
-    .block li:last-child { border-bottom: 0; }
-    .block li::before {
-      content: ""; position: absolute; left: 0; top: 19px;
-      width: 6px; height: 6px;
-      border-radius: 999px;
-      background: var(--signal);
+    .hero-strip img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.6) saturate(1.05) contrast(1.08);
     }
-    .block.responsibilities li::before,
-    .block.qualifications li::before {
-      background: var(--ink);
-      width: 5px; height: 5px;
-      border-radius: 0;
-      transform: rotate(45deg);
-      top: 20px;
+    .hero-strip::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(110deg, rgba(10,21,48,.88) 0%, rgba(10,21,48,.4) 42%, rgba(10,21,48,0) 62%, rgba(10,21,48,.6) 100%);
+    }
+    .hero-strip::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 70px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 70px);
+      mix-blend-mode: screen;
+    }
+    .hero-strip .strip-content {
+      position: absolute; inset: 0;
+      padding: 30px 38px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: #fff;
+      z-index: 2;
+    }
+    .strip-content .top-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+    .strip-content .top-row .left {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,.85);
+    }
+    .strip-content .top-row .left::before {
+      content: ""; width: 6px; height: 6px; border-radius: 999px;
+      background: #5DE3A6;
+      box-shadow: 0 0 8px rgba(93,227,166,.85);
+    }
+    .strip-content .bottom-row {
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .strip-content .quote {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500; font-size: 22px;
+      letter-spacing: -0.018em;
+      line-height: 1.2;
+      color: #fff; max-width: 560px;
+    }
+    .strip-content .quote em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-weight: 400;
+      color: #C7D2EF;
+    }
+    .strip-content .signature {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      text-align: right; line-height: 1.7;
+    }
+    .strip-content .signature .v { color: #fff; font-weight: 600; }
+
+    /* DIVIDER */
+    .div-line {
+      margin: 0 64px;
+      height: 1px; background: var(--silver-2); border: 0;
     }
 
-    /* ====== CTA BAND ====== */
-    .cta-band {
-      margin: 56px 80px 0;
-      background:
-        linear-gradient(135deg, var(--navy) 0%, #122553 60%, #1F3A8A 100%);
-      border-radius: 16px;
-      padding: 44px 48px;
+    /* THREE-COL CONTENT GRID */
+    .grid-3 {
+      padding: 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 56px;
+    }
+    .col h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 22px; font-weight: 700;
+      letter-spacing: -0.022em; line-height: 1.1;
+      color: var(--ink);
+      margin: 12px 0 18px;
+    }
+    .col .cap {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: var(--text-3);
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .col .cap .num {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 30px; font-weight: 800;
+      letter-spacing: -0.04em; text-transform: none;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .col ul { list-style: none; }
+    .col li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+      padding: 11px 0;
+      border-bottom: 1px solid var(--silver-3);
+      letter-spacing: -0.005em;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .col li:last-child { border-bottom: 0; }
+    .col li .lcount {
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .14em;
+      color: var(--text-4);
+      width: 24px;
+    }
+    .col li strong { color: var(--ink); font-weight: 600; }
+
+    /* CTA BAND */
+    .cta {
+      margin: 24px 64px 0;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--navy-2) 60%, var(--signal) 130%);
+      border-radius: 14px;
+      padding: 36px 44px;
       color: #fff;
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1fr auto;
       gap: 40px;
       align-items: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 20px 50px -20px rgba(8,9,13,.55);
     }
-    .cta-band::before {
+    .cta::before {
       content: "";
       position: absolute; inset: 0;
       background:
-        radial-gradient(420px 200px at 100% 0%, rgba(255,255,255,.10), rgba(255,255,255,0) 65%),
-        repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 1px, transparent 1px 24px);
+        radial-gradient(360px 200px at 105% 110%, rgba(31,58,138,.45), transparent 60%),
+        radial-gradient(280px 160px at 0% 0%, rgba(255,255,255,.06), transparent 70%);
       pointer-events: none;
     }
-    .cta-headline {
-      font-family: 'Geist', sans-serif;
-      font-size: 38px; font-weight: 600;
-      letter-spacing: -0.025em; line-height: 1.05;
-      color: #fff;
-      position: relative; z-index: 1;
+    .cta::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,.022) 0 1px, transparent 1px 28px);
+      pointer-events: none;
     }
-    .cta-headline em {
+    .cta-text { position: relative; z-index: 1; }
+    .cta-text .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: #9DB2E8;
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-bottom: 14px;
+    }
+    .cta-text .eyebrow::before {
+      content: ""; width: 26px; height: 1px; background: #9DB2E8;
+    }
+    .cta-text h2 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 38px; font-weight: 700;
+      letter-spacing: -0.028em; line-height: 1.05;
+      color: #fff;
+    }
+    .cta-text h2 em {
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-weight: 400;
+      font-weight: 400; font-style: italic;
       color: #DCE3F1;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.018em;
     }
-    .cta-headline + p {
-      margin-top: 12px;
-      font-size: 15px;
-      color: rgba(255,255,255,.78);
-      max-width: 38ch;
-      line-height: 1.5;
-      position: relative; z-index: 1;
-    }
-
-    .cta-actions {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; gap: 14px;
-      align-items: stretch;
-    }
-    .cta-actions .pill {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 20px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-      color: #fff;
-      font-size: 15px;
-      letter-spacing: -0.005em;
-    }
-    .cta-actions .pill .label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(255,255,255,.58);
-      flex-shrink: 0;
-      width: 56px;
-    }
-    .cta-actions .pill .val {
-      font-family: 'Geist', sans-serif;
-      font-weight: 500;
-      color: #fff;
-    }
-    .cta-actions .pill.primary {
+    .cta-action { position: relative; z-index: 1; }
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 18px 26px;
       background: #fff;
-      color: var(--navy);
-      justify-content: center;
-      padding: 16px 22px;
-      font-weight: 600;
-      letter-spacing: -0.005em;
-      border-color: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: -0.012em;
+      box-shadow: 0 8px 26px -10px rgba(0,0,0,.55);
+      white-space: nowrap;
+    }
+    .cta-button .arr {
+      display: inline-grid; place-items: center;
+      width: 28px; height: 28px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 14px;
     }
 
-    /* ====== FOOTER ====== */
-    footer {
-      position: absolute; left: 80px; right: 80px; bottom: 36px;
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    /* CONTACT BAR */
+    .contact-bar {
+      margin: 18px 64px 0;
+      padding: 18px 0;
+      border-top: 1px solid var(--silver-2);
+      border-bottom: 1px solid var(--silver-2);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 32px;
+    }
+    .contact-bar .item {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .contact-bar .item .lab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
       color: var(--text-3);
     }
-    footer .left { display: inline-flex; align-items: center; gap: 14px; }
-    footer .seal-foot {
-      width: 22px; height: 22px;
-      border-radius: 6px;
+    .contact-bar .item .val {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15.5px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.012em;
+    }
+    .contact-bar .center { width: 1px; height: 32px; background: var(--silver-2); }
+    .contact-bar .right { text-align: right; }
+    .contact-bar .right .val { color: var(--signal); }
+
+    /* FOOTER MARK */
+    .footer-mark {
+      position: absolute; left: 64px; right: 64px; bottom: 22px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-4);
+    }
+    .footer-mark .left { display: inline-flex; align-items: center; gap: 12px; }
+    .footer-mark .seal-foot {
+      width: 16px; height: 16px;
       background: var(--ink);
+      border-radius: 4px;
       display: inline-grid; place-items: center;
     }
-    footer .seal-foot svg { width: 14px; height: 14px; }
-    footer .tags { display: inline-flex; gap: 16px; }
-    footer .tags span { color: var(--text-2); }
-
-    /* Subtle corner mark */
-    .corner {
-      position: absolute;
-      bottom: 100px; right: 80px;
-      width: 90px; height: 90px;
-      opacity: .08;
-      pointer-events: none;
-    }
+    .footer-mark .seal-foot svg { width: 10px; height: 10px; }
+    .footer-mark .tags { display: inline-flex; gap: 16px; }
   </style>
 </head>
 <body>
 
   <article class="flyer">
 
-    <!-- ====== HERO ====== -->
-    <section class="hero">
-      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2400&q=80" alt="" />
+    <div class="top-strip"></div>
 
-      <div class="hero-inner">
-        <header class="topbar">
-          <div class="mark">
-            <span class="seal" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 4 19 V 6 L 16 19 V 6" fill="none" stroke="#0B1B3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="20" cy="6" r="1.6" fill="#1F3A8A"/>
-              </svg>
-            </span>
-            <span class="word">Nexus AI Horizon</span>
-          </div>
-          <div class="meta">
-            <span class="pulse">Now hiring</span>
-            <span>· May 2026</span>
-          </div>
-        </header>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="mark">
+        <span class="seal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 5 19 V 6 L 17 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="6" r="1.7" fill="#5479DD"/>
+          </svg>
+        </span>
+        <span class="word">Nexus AI Horizon<span class="small">AI Consulting · Automation</span></span>
+      </div>
+      <div class="meta">
+        <span class="pulse">Now Hiring</span>
+        <span class="sep">·</span>
+        <span>May 2026</span>
+        <span class="sep">·</span>
+        <span>NYC &amp; Remote</span>
+      </div>
+    </header>
 
-        <div class="hero-headline">
-          <span class="hero-eyebrow">AI Talent Recruitment · Open roles</span>
-          <h1 class="hero-title">
-            Build real systems.<br/>
-            Solve <span class="serif">real problems.</span>
-          </h1>
-          <p class="hero-sub">
-            We are expanding our AI consulting and automation team. We design and deploy practical AI solutions that create measurable impact for businesses.
-          </p>
+    <!-- LEAD -->
+    <section class="lead">
+      <span class="eyebrow">AI Talent Recruitment · 2026 Cohort</span>
+      <h1>Build real systems.<br/><span class="accent">Solve real problems.</span></h1>
+      <p class="deck">
+        <strong>Nexus AI Horizon</strong> is expanding its AI consulting and automation services. We design and deploy practical AI solutions that create measurable impact for businesses &mdash; not demos, not slideware.
+      </p>
+    </section>
+
+    <!-- HERO STRIP -->
+    <section class="hero-strip">
+      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=85" alt="" />
+      <div class="strip-content">
+        <div class="top-row">
+          <span class="left">Live · Engineering Studio</span>
+          <span>5 Open Roles · Class of 2026</span>
         </div>
-
-        <div class="hero-bottom">
-          <span class="badge"><span class="dot"></span> Live · Remote &amp; NYC</span>
-          <span>5 Open Roles · Apply Now</span>
+        <div class="bottom-row">
+          <p class="quote">We're hiring engineers and analysts who can take a brief, build the system, deploy it to a client, and <em>stand behind it.</em></p>
+          <p class="signature">Carl Louis<br/><span class="v">Founder &amp; CEO</span></p>
         </div>
       </div>
     </section>
 
-    <!-- ====== ABOUT ====== -->
-    <div class="body">
-      <div class="about">
-        <span class="label">About<br/>Nexus AI<br/>Horizon</span>
-        <p class="body-text">
-          <strong>Nexus AI Horizon</strong> is an AI consulting &amp; automation studio building practical systems for real businesses. We don't ship demos &mdash; we ship results. We are looking for engineers and analysts who can take a brief, build the system, deploy it to a client, and stand behind it.
-        </p>
+    <hr class="div-line" />
+
+    <!-- THREE COL: ROLES · WORK · ABOUT YOU -->
+    <section class="grid-3">
+      <div class="col">
+        <span class="cap"><span class="num">01</span>Open roles</span>
+        <h3>Who we're hiring</h3>
+        <ul>
+          <li><span class="lcount">01</span><strong>AI Engineer</strong></li>
+          <li><span class="lcount">02</span><strong>ML Developer</strong></li>
+          <li><span class="lcount">03</span><strong>Automation Specialist</strong></li>
+          <li><span class="lcount">04</span><strong>Prompt Engineer</strong></li>
+          <li><span class="lcount">05</span><strong>Data Analyst</strong></li>
+        </ul>
       </div>
+      <div class="col">
+        <span class="cap"><span class="num">02</span>The work</span>
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Build AI agents and automation systems</li>
+          <li>Work on live client projects from day one</li>
+          <li>Improve business workflows using AI</li>
+          <li>Deliver solutions that drive measurable results</li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="cap"><span class="num">03</span>About you</span>
+        <h3>What we look for</h3>
+        <ul>
+          <li><strong>GitHub portfolio</strong> &mdash; required</li>
+          <li><strong>Proven project experience</strong> &mdash; shipped work</li>
+          <li><strong>Strong problem-solving</strong> &mdash; first-principles</li>
+          <li><strong>Independent</strong> &mdash; ownership, not hand-holding</li>
+        </ul>
+      </div>
+    </section>
 
-      <!-- ====== THREE BLOCKS ====== -->
-      <div class="blocks">
-        <div class="block roles">
-          <div class="block-num">01 · Open roles</div>
-          <h3>Who we're hiring</h3>
-          <ul>
-            <li>AI Engineer</li>
-            <li>Machine Learning Developer</li>
-            <li>Automation Specialist</li>
-            <li>Prompt Engineer</li>
-            <li>Data Analyst</li>
-          </ul>
-        </div>
-
-        <div class="block responsibilities">
-          <div class="block-num">02 · The work</div>
-          <h3>What you'll do</h3>
-          <ul>
-            <li>Build AI agents and automation systems</li>
-            <li>Work on live client projects</li>
-            <li>Improve business workflows using AI</li>
-            <li>Deliver solutions that drive results</li>
-          </ul>
-        </div>
-
-        <div class="block qualifications">
-          <div class="block-num">03 · About you</div>
-          <h3>What we look for</h3>
-          <ul>
-            <li>GitHub portfolio required</li>
-            <li>Proven project experience</li>
-            <li>Strong problem-solving ability</li>
-            <li>Ability to work independently</li>
-          </ul>
-        </div>
+    <!-- CTA -->
+    <div class="cta">
+      <div class="cta-text">
+        <span class="eyebrow">Apply · Open until filled</span>
+        <h2>Submit your portfolio today.<br/><em>Show us what you've built.</em></h2>
+      </div>
+      <div class="cta-action">
+        <span class="cta-button">Send portfolio <span class="arr">→</span></span>
       </div>
     </div>
 
-    <!-- ====== CTA BAND ====== -->
-    <section class="cta-band">
-      <div>
-        <h2 class="cta-headline">Apply now. <em>Show us what you've shipped.</em></h2>
-        <p>Submit your portfolio and a short introduction. We respond to every applicant within five business days.</p>
+    <!-- CONTACT BAR -->
+    <div class="contact-bar">
+      <div class="item">
+        <span class="lab">Email applications</span>
+        <span class="val">clouis@nexusaihorizon.com</span>
       </div>
-      <div class="cta-actions">
-        <span class="pill primary">Send your portfolio &nbsp;→</span>
-        <span class="pill"><span class="label">Email</span><span class="val">clouis@nexusaihorizon.com</span></span>
-        <span class="pill"><span class="label">Web</span><span class="val">nexusaihorizon.com</span></span>
+      <span class="center"></span>
+      <div class="item right">
+        <span class="lab">Web</span>
+        <span class="val">nexusaihorizon.com</span>
       </div>
-    </section>
+    </div>
 
-    <!-- ====== FOOTER ====== -->
-    <footer>
-      <div class="left">
+    <!-- FOOTER MARK -->
+    <div class="footer-mark">
+      <span class="left">
         <span class="seal-foot" aria-hidden="true">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 4 19 V 6 L 16 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="20" cy="6" r="1.6" fill="#1F3A8A"/>
+            <path d="M 5 19 V 6 L 17 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="6" r="1.8" fill="#5479DD"/>
           </svg>
         </span>
-        <span>Nexus AI Horizon · AI consulting &amp; automation</span>
-      </div>
-      <div class="tags">
+        <span>Nexus AI Horizon · AI Consulting &amp; Automation</span>
+      </span>
+      <span class="tags">
         <span>#AIEngineer</span>
         <span>#MachineLearning</span>
         <span>#Hiring</span>
-      </div>
-    </footer>
+      </span>
+    </div>
 
   </article>
 
