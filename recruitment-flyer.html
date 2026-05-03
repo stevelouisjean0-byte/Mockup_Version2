@@ -29,6 +29,9 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* PDF one-page spec */
+    @page { size: 1200px 1500px; margin: 0; }
+
     html, body {
       background: #DCDEE3;
       font-family: 'Inter', -apple-system, system-ui, sans-serif;
@@ -37,6 +40,10 @@
       text-rendering: optimizeLegibility;
     }
     body { display: grid; place-items: center; min-height: 100vh; padding: 40px 20px; }
+    @media print {
+      body { background: #fff; padding: 0; min-height: 0; display: block; }
+      .flyer { box-shadow: none; }
+    }
 
     .flyer {
       width: 1200px;
@@ -90,14 +97,13 @@
       font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
       color: var(--text-3); font-weight: 500;
     }
-    .header .meta .pulse {
+    .header .meta .accent {
       display: inline-flex; align-items: center; gap: 8px;
       color: var(--ink); font-weight: 600;
     }
-    .header .meta .pulse::before {
-      content: ""; width: 7px; height: 7px; border-radius: 999px;
-      background: #14B870;
-      box-shadow: 0 0 0 4px rgba(20,184,112,.18);
+    .header .meta .accent::before {
+      content: ""; width: 6px; height: 6px;
+      background: var(--signal); border-radius: 1px;
     }
     .header .meta .sep { color: var(--silver); }
 
@@ -185,12 +191,11 @@
     }
     .strip-content .top-row .left {
       display: inline-flex; align-items: center; gap: 10px;
-      color: rgba(255,255,255,.85);
+      color: rgba(255,255,255,.92);
     }
     .strip-content .top-row .left::before {
-      content: ""; width: 6px; height: 6px; border-radius: 999px;
-      background: #5DE3A6;
-      box-shadow: 0 0 8px rgba(93,227,166,.85);
+      content: ""; width: 18px; height: 1px;
+      background: rgba(255,255,255,.5);
     }
     .strip-content .bottom-row {
       display: flex; justify-content: space-between; align-items: flex-end;
@@ -414,7 +419,7 @@
         <span class="word">Nexus AI Horizon<span class="small">AI Consulting · Automation</span></span>
       </div>
       <div class="meta">
-        <span class="pulse">Now Hiring</span>
+        <span class="accent">Now Hiring</span>
         <span class="sep">·</span>
         <span>May 2026</span>
         <span class="sep">·</span>
@@ -424,7 +429,7 @@
 
     <!-- LEAD -->
     <section class="lead">
-      <span class="eyebrow">AI Talent Recruitment · 2026 Cohort</span>
+      <span class="eyebrow">AI Talent Recruitment</span>
       <h1>Build real systems.<br/><span class="accent">Solve real problems.</span></h1>
       <p class="deck">
         <strong>Nexus AI Horizon</strong> is expanding its AI consulting and automation services. We design and deploy practical AI solutions that create measurable impact for businesses &mdash; not demos, not slideware.
@@ -436,8 +441,8 @@
       <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=85" alt="" />
       <div class="strip-content">
         <div class="top-row">
-          <span class="left">Live · Engineering Studio</span>
-          <span>5 Open Roles · Class of 2026</span>
+          <span class="left">Engineering Studio</span>
+          <span>Five Open Roles · 2026</span>
         </div>
         <div class="bottom-row">
           <p class="quote">We're hiring engineers and analysts who can take a brief, build the system, deploy it to a client, and <em>stand behind it.</em></p>
@@ -519,9 +524,7 @@
         <span>Nexus AI Horizon · AI Consulting &amp; Automation</span>
       </span>
       <span class="tags">
-        <span>#AIEngineer</span>
-        <span>#MachineLearning</span>
-        <span>#Hiring</span>
+        <span>Confidential · For prospective applicants</span>
       </span>
     </div>
 
