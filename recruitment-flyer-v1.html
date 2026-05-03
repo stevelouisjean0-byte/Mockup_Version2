@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>Nexus AI Horizon — AI Talent Recruitment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:        #0A1530;
+      --navy-2:      #0F1B3D;
+      --signal:      #1F3A8A;
+      --signal-lite: #5479DD;
+      --ink:         #08090D;
+      --text:        #20232C;
+      --text-2:      #4A4D58;
+      --text-3:      #777A85;
+      --text-4:      #A8AAB1;
+      --silver:      #C5C7CD;
+      --silver-2:    #DCDEE3;
+      --silver-3:    #E8EAEE;
+      --paper:       #F8F9FB;
+      --paper-2:     #F1F2F6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* PDF one-page spec */
+    @page { size: 1200px 1500px; margin: 0; }
+
+    html, body {
+      background: #DCDEE3;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      font-feature-settings: 'cv11', 'ss01', 'ss03';
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body { display: grid; place-items: center; min-height: 100vh; padding: 40px 20px; }
+    @media print {
+      body { background: #fff; padding: 0; min-height: 0; display: block; }
+      .flyer { box-shadow: none; }
+    }
+
+    .flyer {
+      width: 1200px;
+      height: 1500px;
+      background: linear-gradient(180deg, var(--paper) 0%, #FDFDFE 30%, var(--paper) 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 50px 120px -30px rgba(8,9,13,.40),
+        0 14px 40px -12px rgba(8,9,13,.18),
+        inset 0 0 0 1px rgba(8,9,13,.04);
+      color: var(--ink);
+    }
+
+    /* TOP STRIP */
+    .top-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--ink) 0%, var(--signal) 60%, var(--ink) 100%);
+    }
+
+    /* HEADER */
+    .header {
+      padding: 32px 64px 0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .mark { display: inline-flex; align-items: center; gap: 16px; }
+    .mark .seal {
+      width: 64px; height: 36px;
+      display: inline-grid; place-items: center;
+    }
+    .mark .seal svg { width: 100%; height: 100%; display: block; }
+    .mark .word {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 17px; font-weight: 700;
+      letter-spacing: -0.018em; color: var(--ink);
+      line-height: 1;
+    }
+    .mark .word .small {
+      display: block;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-3); margin-top: 4px;
+    }
+    .header .meta {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-3); font-weight: 500;
+    }
+    .header .meta .accent {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink); font-weight: 600;
+    }
+    .header .meta .accent::before {
+      content: ""; width: 6px; height: 6px;
+      background: var(--signal); border-radius: 1px;
+    }
+    .header .meta .sep { color: var(--silver); }
+
+    /* LEAD */
+    .lead {
+      padding: 44px 64px 0;
+    }
+    .lead .eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase;
+      color: var(--signal);
+      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-bottom: 24px;
+    }
+    .lead .eyebrow::before {
+      content: ""; width: 36px; height: 1px; background: var(--signal);
+    }
+    .lead h1 {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 124px;
+      line-height: .94;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+    }
+    .lead h1 .accent {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400; font-style: italic;
+      font-size: 130px;
+      letter-spacing: -0.022em;
+      color: var(--signal);
+    }
+    .lead .deck {
+      margin-top: 26px;
+      max-width: 720px;
+      font-size: 19px; font-weight: 400;
+      line-height: 1.45;
+      color: var(--text-2);
+      letter-spacing: -0.005em;
+    }
+    .lead .deck strong { color: var(--ink); font-weight: 600; }
+
+    /* HERO STRIP */
+    .hero-strip {
+      margin: 36px 64px 0;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: var(--navy);
+      box-shadow: 0 20px 50px -18px rgba(8,9,13,.45), inset 0 0 0 1px rgba(255,255,255,.06);
+    }
+    .hero-strip img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.6) saturate(1.05) contrast(1.08);
+    }
+    .hero-strip::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(110deg, rgba(10,21,48,.88) 0%, rgba(10,21,48,.4) 42%, rgba(10,21,48,0) 62%, rgba(10,21,48,.6) 100%);
+    }
+    .hero-strip::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 70px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 70px);
+      mix-blend-mode: screen;
+    }
+    .hero-strip .strip-content {
+      position: absolute; inset: 0;
+      padding: 30px 38px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: #fff;
+      z-index: 2;
+    }
+    .strip-content .top-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+    .strip-content .top-row .left {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,.92);
+    }
+    .strip-content .top-row .left::before {
+      content: ""; width: 18px; height: 1px;
+      background: rgba(255,255,255,.5);
+    }
+    .strip-content .bottom-row {
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .strip-content .quote {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500; font-size: 22px;
+      letter-spacing: -0.018em;
+      line-height: 1.2;
+      color: #fff; max-width: 560px;
+    }
+    .strip-content .quote em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-weight: 400;
+      color: #C7D2EF;
+    }
+    .strip-content .signature {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      text-align: right; line-height: 1.7;
+    }
+    .strip-content .signature .v { color: #fff; font-weight: 600; }
+
+    /* DIVIDER */
+    .div-line {
+      margin: 0 64px;
+      height: 1px; background: var(--silver-2); border: 0;
+    }
+
+    /* THREE-COL CONTENT GRID */
+    .grid-3 {
+      padding: 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 56px;
+    }
+    .col h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 22px; font-weight: 700;
+      letter-spacing: -0.022em; line-height: 1.1;
+      color: var(--ink);
+      margin: 12px 0 18px;
+    }
+    .col .cap {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: var(--text-3);
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .col .cap .num {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 30px; font-weight: 800;
+      letter-spacing: -0.04em; text-transform: none;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .col ul { list-style: none; }
+    .col li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+      padding: 11px 0;
+      border-bottom: 1px solid var(--silver-3);
+      letter-spacing: -0.005em;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .col li:last-child { border-bottom: 0; }
+    .col li .lcount {
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .14em;
+      color: var(--text-4);
+      width: 24px;
+    }
+    .col li strong { color: var(--ink); font-weight: 600; }
+
+    /* CTA BAND */
+    .cta {
+      margin: 24px 64px 0;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--navy-2) 60%, var(--signal) 130%);
+      border-radius: 14px;
+      padding: 36px 44px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px -20px rgba(8,9,13,.55);
+    }
+    .cta::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(360px 200px at 105% 110%, rgba(31,58,138,.45), transparent 60%),
+        radial-gradient(280px 160px at 0% 0%, rgba(255,255,255,.06), transparent 70%);
+      pointer-events: none;
+    }
+    .cta::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,.022) 0 1px, transparent 1px 28px);
+      pointer-events: none;
+    }
+    .cta-text { position: relative; z-index: 1; }
+    .cta-text .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: #9DB2E8;
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-bottom: 14px;
+    }
+    .cta-text .eyebrow::before {
+      content: ""; width: 26px; height: 1px; background: #9DB2E8;
+    }
+    .cta-text h2 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 38px; font-weight: 700;
+      letter-spacing: -0.028em; line-height: 1.05;
+      color: #fff;
+    }
+    .cta-text h2 em {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400; font-style: italic;
+      color: #DCE3F1;
+      letter-spacing: -0.018em;
+    }
+    .cta-action { position: relative; z-index: 1; }
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 18px 26px;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: -0.012em;
+      box-shadow: 0 8px 26px -10px rgba(0,0,0,.55);
+      white-space: nowrap;
+    }
+    .cta-button .arr {
+      display: inline-grid; place-items: center;
+      width: 28px; height: 28px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    /* CONTACT BAR */
+    .contact-bar {
+      margin: 18px 64px 0;
+      padding: 18px 0;
+      border-top: 1px solid var(--silver-2);
+      border-bottom: 1px solid var(--silver-2);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 32px;
+    }
+    .contact-bar .item {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .contact-bar .item .lab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .contact-bar .item .val {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15.5px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.012em;
+    }
+    .contact-bar .center { width: 1px; height: 32px; background: var(--silver-2); }
+    .contact-bar .right { text-align: right; }
+    .contact-bar .right .val { color: var(--signal); }
+
+    /* FOOTER MARK */
+    .footer-mark {
+      position: absolute; left: 64px; right: 64px; bottom: 22px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-4);
+    }
+    .footer-mark .left { display: inline-flex; align-items: center; gap: 12px; }
+    .footer-mark .seal-foot {
+      width: 32px; height: 18px;
+      display: inline-grid; place-items: center;
+    }
+    .footer-mark .seal-foot svg { width: 100%; height: 100%; display: block; }
+    .footer-mark .tags { display: inline-flex; gap: 16px; }
+  </style>
+</head>
+<body>
+
+  <article class="flyer">
+
+    <div class="top-strip"></div>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="mark">
+        <span class="seal" aria-hidden="true">
+          <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nx-grad-h" x1="0%" y1="20%" x2="100%" y2="80%">
+                <stop offset="0%"  stop-color="#5BA3FF"/>
+                <stop offset="40%" stop-color="#1E4FBF"/>
+                <stop offset="100%" stop-color="#08164A"/>
+              </linearGradient>
+              <linearGradient id="nx-grad-h2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"  stop-color="#08164A"/>
+                <stop offset="100%" stop-color="#1E4FBF"/>
+              </linearGradient>
+            </defs>
+            <!-- Infinity ribbon · twin-loop with crossover shading -->
+            <path d="M 12 28
+                     C 12 8, 38 8, 50 28
+                     C 62 48, 88 48, 88 28
+                     C 88 8, 62 8, 50 28
+                     C 38 48, 12 48, 12 28 Z"
+                  fill="none"
+                  stroke="url(#nx-grad-h)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <!-- Inner crossover shadow (gives 3D twist) -->
+            <path d="M 44 24 Q 50 28 56 32"
+                  fill="none"
+                  stroke="url(#nx-grad-h2)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  opacity="0.95"/>
+            <!-- Two connection nodes on right loop -->
+            <line x1="74" y1="18" x2="86" y2="22"
+                  stroke="#FFFFFF" stroke-width="1.2" opacity="0.95"/>
+            <circle cx="74" cy="18" r="2.4" fill="#FFFFFF"/>
+            <circle cx="86" cy="22" r="2.4" fill="#FFFFFF"/>
+          </svg>
+        </span>
+        <span class="word">Nexus AI Horizon<span class="small">AI Consulting · Automation</span></span>
+      </div>
+      <div class="meta">
+        <span class="accent">Now Hiring</span>
+        <span class="sep">·</span>
+        <span>May 2026</span>
+        <span class="sep">·</span>
+        <span>NYC &amp; Remote</span>
+      </div>
+    </header>
+
+    <!-- LEAD -->
+    <section class="lead">
+      <span class="eyebrow">AI Talent Recruitment</span>
+      <h1>Build real systems.<br/><span class="accent">Solve real problems.</span></h1>
+      <p class="deck">
+        <strong>Nexus AI Horizon</strong> is expanding its AI consulting and automation services. We design and deploy practical AI solutions that create measurable impact for businesses &mdash; not demos, not slideware.
+      </p>
+    </section>
+
+    <!-- HERO STRIP -->
+    <section class="hero-strip">
+      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=85" alt="" />
+      <div class="strip-content">
+        <div class="top-row">
+          <span class="left">Engineering Studio</span>
+          <span>Five Open Roles · 2026</span>
+        </div>
+        <div class="bottom-row">
+          <p class="quote">We're hiring engineers and analysts who can take a brief, build the system, deploy it to a client, and <em>stand behind it.</em></p>
+          <p class="signature">Carl Louis<br/><span class="v">Founder &amp; CEO</span></p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div-line" />
+
+    <!-- THREE COL: ROLES · WORK · ABOUT YOU -->
+    <section class="grid-3">
+      <div class="col">
+        <span class="cap"><span class="num">01</span>Open roles</span>
+        <h3>Who we're hiring</h3>
+        <ul>
+          <li><span class="lcount">01</span><strong>AI Engineer</strong></li>
+          <li><span class="lcount">02</span><strong>ML Developer</strong></li>
+          <li><span class="lcount">03</span><strong>Automation Specialist</strong></li>
+          <li><span class="lcount">04</span><strong>Prompt Engineer</strong></li>
+          <li><span class="lcount">05</span><strong>Data Analyst</strong></li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="cap"><span class="num">02</span>The work</span>
+        <h3>What you'll do</h3>
+        <ul>
+          <li>Build AI agents and automation systems</li>
+          <li>Work on live client projects from day one</li>
+          <li>Improve business workflows using AI</li>
+          <li>Deliver solutions that drive measurable results</li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="cap"><span class="num">03</span>About you</span>
+        <h3>What we look for</h3>
+        <ul>
+          <li><strong>GitHub portfolio</strong> &mdash; required</li>
+          <li><strong>Proven project experience</strong> &mdash; shipped work</li>
+          <li><strong>Strong problem-solving</strong> &mdash; first-principles</li>
+          <li><strong>Independent</strong> &mdash; ownership, not hand-holding</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div class="cta-text">
+        <span class="eyebrow">Apply · Open until filled</span>
+        <h2>Submit your portfolio today.<br/><em>Show us what you've built.</em></h2>
+      </div>
+      <div class="cta-action">
+        <span class="cta-button">Send portfolio <span class="arr">→</span></span>
+      </div>
+    </div>
+
+    <!-- CONTACT BAR -->
+    <div class="contact-bar">
+      <div class="item">
+        <span class="lab">Email applications</span>
+        <span class="val">careers@nexusaihorizon.com</span>
+      </div>
+      <span class="center"></span>
+      <div class="item right">
+        <span class="lab">Web</span>
+        <span class="val">nexusaihorizon.com</span>
+      </div>
+    </div>
+
+    <!-- FOOTER MARK -->
+    <div class="footer-mark">
+      <span class="left">
+        <span class="seal-foot" aria-hidden="true">
+          <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nx-grad-f" x1="0%" y1="20%" x2="100%" y2="80%">
+                <stop offset="0%"  stop-color="#5BA3FF"/>
+                <stop offset="40%" stop-color="#1E4FBF"/>
+                <stop offset="100%" stop-color="#08164A"/>
+              </linearGradient>
+            </defs>
+            <path d="M 12 28
+                     C 12 8, 38 8, 50 28
+                     C 62 48, 88 48, 88 28
+                     C 88 8, 62 8, 50 28
+                     C 38 48, 12 48, 12 28 Z"
+                  fill="none"
+                  stroke="url(#nx-grad-f)"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <line x1="74" y1="18" x2="86" y2="22" stroke="#FFFFFF" stroke-width="1.2" opacity="0.9"/>
+            <circle cx="74" cy="18" r="2.4" fill="#FFFFFF"/>
+            <circle cx="86" cy="22" r="2.4" fill="#FFFFFF"/>
+          </svg>
+        </span>
+        <span>Nexus AI Horizon · AI Consulting &amp; Automation</span>
+      </span>
+      <span class="tags">
+        <span>Confidential · For prospective applicants</span>
+      </span>
+    </div>
+
+  </article>
+
+</body>
+</html>

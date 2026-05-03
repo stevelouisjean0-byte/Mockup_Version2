@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>Nexus AI Horizon — AI Talent Recruitment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:        #0A1530;
+      --navy-2:      #0F1B3D;
+      --signal:      #1F3A8A;
+      --signal-2:    #5479DD;
+      --ink:         #08090D;
+      --text:        #20232C;
+      --text-2:      #4A4D58;
+      --text-3:      #777A85;
+      --text-4:      #A8AAB1;
+      --silver:      #C5C7CD;
+      --silver-2:    #DCDEE3;
+      --silver-3:    #E8EAEE;
+      --paper:       #F8F9FB;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: 1200px 1500px; margin: 0; }
+    html, body {
+      background: #DCDEE3;
+      font-family: 'Inter', sans-serif;
+      font-feature-settings: 'cv11', 'ss01', 'ss03';
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body { display: grid; place-items: center; min-height: 100vh; padding: 40px 20px; }
+    @media print {
+      body { background: #fff; padding: 0; min-height: 0; display: block; }
+      .flyer { box-shadow: none; }
+    }
+
+    .flyer {
+      width: 1200px;
+      height: 1500px;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 50px 120px -30px rgba(8,9,13,.4);
+      color: var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Left panel — dark hero */
+    .left-panel {
+      background:
+        radial-gradient(500px 360px at 30% 25%, rgba(91,130,242,.16), transparent 65%),
+        linear-gradient(155deg, var(--navy) 0%, var(--navy-2) 70%, #1B2D6E 100%);
+      color: #fff;
+      padding: 64px 56px;
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .left-panel::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 80px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 80px);
+      pointer-events: none;
+    }
+    .left-panel::after {
+      content: "";
+      position: absolute;
+      bottom: -120px; right: -120px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(84,121,221,.25), transparent 65%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .lp-top {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; gap: 36px;
+    }
+    .lp-mark { display: inline-flex; align-items: center; gap: 14px; }
+    .lp-mark .seal { width: 64px; height: 36px; }
+    .lp-mark .seal svg { width: 100%; height: 100%; }
+    .lp-mark .word {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 17px; font-weight: 700; color: #fff;
+      letter-spacing: -0.018em; line-height: 1;
+    }
+    .lp-mark .word .small {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.55); margin-top: 4px;
+    }
+    .lp-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: #88A6FF;
+      display: inline-flex; align-items: center; gap: 14px;
+    }
+    .lp-eyebrow::before {
+      content: ""; width: 36px; height: 1px; background: #88A6FF;
+    }
+
+    .lp-headline {
+      position: relative; z-index: 2;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 800;
+      font-size: 96px;
+      line-height: .94;
+      letter-spacing: -0.045em;
+      color: #fff;
+      max-width: 11ch;
+    }
+    .lp-headline .accent {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400; font-style: italic;
+      font-size: 102px;
+      letter-spacing: -0.022em;
+      background: linear-gradient(135deg, #88A6FF, #5479DD 60%, #1E3FA0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lp-deck {
+      position: relative; z-index: 2;
+      max-width: 38ch;
+      font-size: 17.5px; line-height: 1.5;
+      color: rgba(255,255,255,.85);
+      font-weight: 400;
+      letter-spacing: -0.005em;
+    }
+    .lp-deck strong { color: #fff; font-weight: 600; }
+
+    .lp-bottom {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; gap: 18px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+    .lp-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .lp-meta .accent {
+      color: #fff; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .lp-meta .accent::before {
+      content: ""; width: 6px; height: 6px;
+      background: #5479DD; border-radius: 1px;
+    }
+    .lp-quote {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: -0.014em;
+      color: #fff;
+      max-width: 36ch;
+    }
+    .lp-quote em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      color: #88A6FF;
+    }
+    .lp-sig {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+    }
+    .lp-sig .v { color: #fff; font-weight: 600; }
+
+    /* Right panel — content */
+    .right-panel {
+      background: var(--paper);
+      padding: 64px 56px;
+      display: flex; flex-direction: column; gap: 0;
+      position: relative;
+    }
+
+    .rp-header {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase;
+      color: var(--text-3);
+      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--silver-2);
+    }
+    .rp-header .lcount { color: var(--ink); font-weight: 700; }
+
+    .block {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--silver-2);
+    }
+    .block:last-child { border-bottom: 0; }
+    .block .cap {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: var(--signal);
+      display: flex; align-items: baseline; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .block .cap .num {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 24px; font-weight: 800;
+      letter-spacing: -0.04em; text-transform: none;
+      color: var(--ink); line-height: 1;
+    }
+    .block h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 22px; font-weight: 700;
+      letter-spacing: -0.022em; line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .roles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    .roles-grid li {
+      list-style: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 500;
+      color: var(--text);
+      padding: 8px 0;
+      letter-spacing: -0.005em;
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .roles-grid li .lcount {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; letter-spacing: .14em;
+      color: var(--text-3);
+      width: 22px; flex-shrink: 0;
+    }
+    .roles-grid li strong { color: var(--ink); font-weight: 600; }
+    .block ul.full { list-style: none; }
+    .block ul.full li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+      padding: 7px 0;
+      letter-spacing: -0.005em;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .block ul.full li::before {
+      content: ""; width: 5px; height: 5px;
+      background: var(--ink);
+      transform: translateY(2px);
+      flex-shrink: 0;
+    }
+    .block ul.full li strong { color: var(--ink); font-weight: 600; }
+
+    /* CTA in right panel */
+    .rp-cta {
+      margin-top: 24px;
+      padding: 24px;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--navy-2) 100%);
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 16px 40px -16px rgba(8,9,13,.55);
+      position: relative; overflow: hidden;
+    }
+    .rp-cta::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(280px 160px at 100% 100%, rgba(84,121,221,.32), transparent 60%);
+    }
+    .rp-cta-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: #88A6FF;
+      display: inline-flex; align-items: center; gap: 12px;
+      margin-bottom: 10px;
+      position: relative; z-index: 1;
+    }
+    .rp-cta-eyebrow::before {
+      content: ""; width: 22px; height: 1px; background: #88A6FF;
+    }
+    .rp-cta h2 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 28px; font-weight: 700;
+      letter-spacing: -0.025em; line-height: 1.05;
+      color: #fff;
+      margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .rp-cta h2 em {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400; font-style: italic;
+      color: #C7D2EF;
+    }
+    .rp-button {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 22px;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px; font-weight: 700;
+      letter-spacing: -0.012em;
+      box-shadow: 0 6px 20px -6px rgba(0,0,0,.5);
+      position: relative; z-index: 1;
+    }
+    .rp-button .arr {
+      display: inline-grid; place-items: center;
+      width: 24px; height: 24px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff; font-size: 13px;
+    }
+
+    .rp-contact {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--silver-2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .rp-contact .item { display: flex; flex-direction: column; gap: 3px; }
+    .rp-contact .item .lab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .rp-contact .item .val {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.012em;
+    }
+    .rp-contact .item:last-child .val { color: var(--signal); text-align: right; }
+    .rp-contact .item:last-child { text-align: right; }
+
+    .rp-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--silver-3);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-4);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="flyer">
+
+    <!-- LEFT panel: dark hero -->
+    <section class="left-panel">
+      <div class="lp-top">
+        <div class="lp-mark">
+          <span class="seal" aria-hidden="true">
+            <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lg3-h" x1="0%" y1="20%" x2="100%" y2="80%">
+                  <stop offset="0%" stop-color="#88A6FF"/>
+                  <stop offset="50%" stop-color="#5B82F2"/>
+                  <stop offset="100%" stop-color="#1E3FA0"/>
+                </linearGradient>
+              </defs>
+              <path d="M 12 28 C 12 8, 38 8, 50 28 C 62 48, 88 48, 88 28 C 88 8, 62 8, 50 28 C 38 48, 12 48, 12 28 Z"
+                    fill="none" stroke="url(#lg3-h)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="74" y1="18" x2="86" y2="22" stroke="#fff" stroke-width="1.2" opacity=".95"/>
+              <circle cx="74" cy="18" r="2.4" fill="#fff"/>
+              <circle cx="86" cy="22" r="2.4" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="word">Nexus AI Horizon<span class="small">AI Consulting · Automation</span></span>
+        </div>
+        <span class="lp-eyebrow">AI Talent Recruitment</span>
+      </div>
+
+      <h1 class="lp-headline">Build real systems.<br/><span class="accent">Solve real problems.</span></h1>
+
+      <p class="lp-deck"><strong>Nexus AI Horizon</strong> is expanding its AI consulting and automation services. We design and deploy practical AI solutions that create measurable impact for businesses &mdash; not demos, not slideware.</p>
+
+      <div class="lp-bottom">
+        <p class="lp-quote">We're hiring engineers and analysts who can take a brief, build the system, deploy it to a client, and <em>stand behind it.</em></p>
+        <span class="lp-sig">Carl Louis · <span class="v">Founder &amp; CEO</span></span>
+        <div class="lp-meta">
+          <span class="accent">Now Hiring · May 2026</span>
+          <span>NYC &amp; Remote · Five Open Roles</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT panel: content -->
+    <section class="right-panel">
+      <div class="rp-header">
+        <span>Recruitment Brief</span>
+        <span><span class="lcount">5</span>&nbsp;Roles · 2026</span>
+      </div>
+
+      <div class="block">
+        <span class="cap"><span class="num">01</span>Open roles</span>
+        <h3>Who we're hiring</h3>
+        <ul class="roles-grid">
+          <li><span class="lcount">01</span><strong>AI Engineer</strong></li>
+          <li><span class="lcount">02</span><strong>ML Developer</strong></li>
+          <li><span class="lcount">03</span><strong>Automation Specialist</strong></li>
+          <li><span class="lcount">04</span><strong>Prompt Engineer</strong></li>
+          <li><span class="lcount">05</span><strong>Data Analyst</strong></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <span class="cap"><span class="num">02</span>The work</span>
+        <h3>What you'll do</h3>
+        <ul class="full">
+          <li>Build AI agents and automation systems</li>
+          <li>Work on live client projects from day one</li>
+          <li>Improve business workflows using AI</li>
+          <li>Deliver solutions that drive measurable results</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <span class="cap"><span class="num">03</span>About you</span>
+        <h3>What we look for</h3>
+        <ul class="full">
+          <li><strong>GitHub portfolio</strong> &mdash; required, not optional</li>
+          <li><strong>Proven project experience</strong> &mdash; shipped work</li>
+          <li><strong>Strong problem-solving</strong> &mdash; first-principles</li>
+          <li><strong>Independent</strong> &mdash; ownership, not hand-holding</li>
+        </ul>
+      </div>
+
+      <div class="rp-cta">
+        <span class="rp-cta-eyebrow">Apply · Open until filled</span>
+        <h2>Submit your portfolio. <em>Show us what you've built.</em></h2>
+        <span class="rp-button">Send portfolio <span class="arr">→</span></span>
+      </div>
+
+      <div class="rp-contact">
+        <div class="item">
+          <span class="lab">Email applications</span>
+          <span class="val">careers@nexusaihorizon.com</span>
+        </div>
+        <div class="item">
+          <span class="lab">Web</span>
+          <span class="val">nexusaihorizon.com</span>
+        </div>
+      </div>
+
+      <div class="rp-footer">
+        Nexus AI Horizon · AI Consulting &amp; Automation · Confidential
+      </div>
+    </section>
+
+  </article>
+
+</body>
+</html>
