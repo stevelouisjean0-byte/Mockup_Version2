@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>Nexus AI Horizon — AI Talent Recruitment</title>
+  <meta name="description" content="Nexus AI Horizon is hiring AI engineers, ML developers, automation specialists, prompt engineers, and data analysts to build real systems for real clients." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:        #0B1B3F;
+      --navy-deep:   #060F26;
+      --signal:      #1F3A8A;
+      --signal-2:    #2D4FBF;
+      --ink:         #0E1118;
+      --text:        #2A2D38;
+      --text-2:      #5A5D67;
+      --text-3:      #8B8E97;
+      --silver:      #C8CBD2;
+      --silver-2:    #E4E6EB;
+      --paper:       #FAFAFC;
+      --paper-2:     #F2F3F6;
+      --gold:        #C9A87C;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #E1E3E9;
+      font-family: 'Geist', -apple-system, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Stage / canvas — fixed flyer geometry */
+    body { display: grid; place-items: center; min-height: 100vh; padding: 40px 20px; }
+    .flyer {
+      width: 1200px;
+      height: 1500px;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 100px -20px rgba(11,27,63,.35), 0 12px 28px -10px rgba(11,27,63,.18);
+      color: var(--ink);
+    }
+
+    /* ====== TOP BAND — hero photo + overlay ====== */
+    .hero {
+      position: relative;
+      height: 520px;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.55) saturate(1.05) contrast(1.05);
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6,15,38,.30) 0%, rgba(6,15,38,.55) 60%, rgba(6,15,38,.85) 100%),
+        linear-gradient(120deg, rgba(31,58,138,.25), rgba(0,0,0,0) 60%);
+      z-index: 1;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(800px 380px at 12% 18%, rgba(255,255,255,.06), rgba(255,255,255,0) 70%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 70px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 70px);
+      z-index: 2;
+      mix-blend-mode: screen;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 3;
+      height: 100%;
+      padding: 60px 80px;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      letter-spacing: .14em; text-transform: uppercase;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+    }
+    .mark {
+      display: inline-flex; align-items: center; gap: 14px;
+    }
+    .mark .seal {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #DCE3F1 100%);
+      display: inline-grid; place-items: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18), inset 0 0 0 1px rgba(0,0,0,.04);
+    }
+    .mark .seal svg { width: 22px; height: 22px; display: block; }
+    .mark .word {
+      font-family: 'Geist', sans-serif;
+      font-size: 18px; font-weight: 600; letter-spacing: -0.012em;
+      color: #fff;
+      text-transform: none;
+    }
+    .topbar .meta {
+      display: inline-flex; align-items: center; gap: 12px;
+    }
+    .topbar .pulse {
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .topbar .pulse::before {
+      content: ""; width: 7px; height: 7px; border-radius: 999px;
+      background: #6FE9B0;
+      box-shadow: 0 0 10px rgba(111,233,176,.85);
+    }
+
+    .hero-headline {
+      max-width: 880px;
+    }
+    .hero-eyebrow {
+      font-family: 'Geist Mono', monospace;
+      font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+      color: #9DB2E8;
+      margin-bottom: 22px;
+      display: inline-flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: ""; width: 38px; height: 1px; background: rgba(157,178,232,.55);
+    }
+    .hero-title {
+      font-family: 'Geist', sans-serif;
+      font-weight: 600;
+      font-size: 86px;
+      line-height: .98;
+      letter-spacing: -0.035em;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .hero-title .serif {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #DCE3F1;
+    }
+    .hero-sub {
+      font-size: 22px;
+      line-height: 1.4;
+      color: rgba(255,255,255,.86);
+      max-width: 720px;
+      font-weight: 400;
+    }
+
+    .hero-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+    .hero-bottom .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 9px 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-bottom .badge .dot {
+      width: 6px; height: 6px; border-radius: 999px; background: #6FE9B0;
+      box-shadow: 0 0 8px rgba(111,233,176,.8);
+    }
+
+    /* ====== BODY ====== */
+    .body {
+      padding: 56px 80px 0;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--silver-2);
+    }
+    .about .label {
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-3);
+      font-weight: 600;
+    }
+    .about .body-text {
+      font-size: 20px;
+      line-height: 1.45;
+      color: var(--text);
+      letter-spacing: -0.005em;
+      font-weight: 400;
+    }
+    .about .body-text strong { color: var(--ink); font-weight: 600; }
+
+    /* Three-column block */
+    .blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      margin-top: 40px;
+    }
+    .block {
+      padding: 0 28px;
+      border-right: 1px solid var(--silver-2);
+    }
+    .block:first-child { padding-left: 0; }
+    .block:last-child { padding-right: 0; border-right: 0; }
+
+    .block .block-num {
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--signal);
+      font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .block .block-num::before {
+      content: ""; width: 18px; height: 1px; background: var(--signal);
+    }
+    .block h3 {
+      font-family: 'Geist', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 14px 0 22px;
+      line-height: 1.1;
+    }
+    .block ul { list-style: none; }
+    .block li {
+      font-size: 15.5px;
+      line-height: 1.45;
+      color: var(--text);
+      padding: 10px 0 10px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--silver-2);
+    }
+    .block li:last-child { border-bottom: 0; }
+    .block li::before {
+      content: ""; position: absolute; left: 0; top: 19px;
+      width: 6px; height: 6px;
+      border-radius: 999px;
+      background: var(--signal);
+    }
+    .block.responsibilities li::before,
+    .block.qualifications li::before {
+      background: var(--ink);
+      width: 5px; height: 5px;
+      border-radius: 0;
+      transform: rotate(45deg);
+      top: 20px;
+    }
+
+    /* ====== CTA BAND ====== */
+    .cta-band {
+      margin: 56px 80px 0;
+      background:
+        linear-gradient(135deg, var(--navy) 0%, #122553 60%, #1F3A8A 100%);
+      border-radius: 16px;
+      padding: 44px 48px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(420px 200px at 100% 0%, rgba(255,255,255,.10), rgba(255,255,255,0) 65%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 1px, transparent 1px 24px);
+      pointer-events: none;
+    }
+    .cta-headline {
+      font-family: 'Geist', sans-serif;
+      font-size: 38px; font-weight: 600;
+      letter-spacing: -0.025em; line-height: 1.05;
+      color: #fff;
+      position: relative; z-index: 1;
+    }
+    .cta-headline em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-weight: 400;
+      color: #DCE3F1;
+      letter-spacing: -0.015em;
+    }
+    .cta-headline + p {
+      margin-top: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,.78);
+      max-width: 38ch;
+      line-height: 1.5;
+      position: relative; z-index: 1;
+    }
+
+    .cta-actions {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 14px;
+      align-items: stretch;
+    }
+    .cta-actions .pill {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: -0.005em;
+    }
+    .cta-actions .pill .label {
+      font-family: 'Geist Mono', monospace;
+      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(255,255,255,.58);
+      flex-shrink: 0;
+      width: 56px;
+    }
+    .cta-actions .pill .val {
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      color: #fff;
+    }
+    .cta-actions .pill.primary {
+      background: #fff;
+      color: var(--navy);
+      justify-content: center;
+      padding: 16px 22px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      border-color: #fff;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      position: absolute; left: 80px; right: 80px; bottom: 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text-3);
+    }
+    footer .left { display: inline-flex; align-items: center; gap: 14px; }
+    footer .seal-foot {
+      width: 22px; height: 22px;
+      border-radius: 6px;
+      background: var(--ink);
+      display: inline-grid; place-items: center;
+    }
+    footer .seal-foot svg { width: 14px; height: 14px; }
+    footer .tags { display: inline-flex; gap: 16px; }
+    footer .tags span { color: var(--text-2); }
+
+    /* Subtle corner mark */
+    .corner {
+      position: absolute;
+      bottom: 100px; right: 80px;
+      width: 90px; height: 90px;
+      opacity: .08;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="flyer">
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2400&q=80" alt="" />
+
+      <div class="hero-inner">
+        <header class="topbar">
+          <div class="mark">
+            <span class="seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 4 19 V 6 L 16 19 V 6" fill="none" stroke="#0B1B3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="20" cy="6" r="1.6" fill="#1F3A8A"/>
+              </svg>
+            </span>
+            <span class="word">Nexus AI Horizon</span>
+          </div>
+          <div class="meta">
+            <span class="pulse">Now hiring</span>
+            <span>· May 2026</span>
+          </div>
+        </header>
+
+        <div class="hero-headline">
+          <span class="hero-eyebrow">AI Talent Recruitment · Open roles</span>
+          <h1 class="hero-title">
+            Build real systems.<br/>
+            Solve <span class="serif">real problems.</span>
+          </h1>
+          <p class="hero-sub">
+            We are expanding our AI consulting and automation team. We design and deploy practical AI solutions that create measurable impact for businesses.
+          </p>
+        </div>
+
+        <div class="hero-bottom">
+          <span class="badge"><span class="dot"></span> Live · Remote &amp; NYC</span>
+          <span>5 Open Roles · Apply Now</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ABOUT ====== -->
+    <div class="body">
+      <div class="about">
+        <span class="label">About<br/>Nexus AI<br/>Horizon</span>
+        <p class="body-text">
+          <strong>Nexus AI Horizon</strong> is an AI consulting &amp; automation studio building practical systems for real businesses. We don't ship demos &mdash; we ship results. We are looking for engineers and analysts who can take a brief, build the system, deploy it to a client, and stand behind it.
+        </p>
+      </div>
+
+      <!-- ====== THREE BLOCKS ====== -->
+      <div class="blocks">
+        <div class="block roles">
+          <div class="block-num">01 · Open roles</div>
+          <h3>Who we're hiring</h3>
+          <ul>
+            <li>AI Engineer</li>
+            <li>Machine Learning Developer</li>
+            <li>Automation Specialist</li>
+            <li>Prompt Engineer</li>
+            <li>Data Analyst</li>
+          </ul>
+        </div>
+
+        <div class="block responsibilities">
+          <div class="block-num">02 · The work</div>
+          <h3>What you'll do</h3>
+          <ul>
+            <li>Build AI agents and automation systems</li>
+            <li>Work on live client projects</li>
+            <li>Improve business workflows using AI</li>
+            <li>Deliver solutions that drive results</li>
+          </ul>
+        </div>
+
+        <div class="block qualifications">
+          <div class="block-num">03 · About you</div>
+          <h3>What we look for</h3>
+          <ul>
+            <li>GitHub portfolio required</li>
+            <li>Proven project experience</li>
+            <li>Strong problem-solving ability</li>
+            <li>Ability to work independently</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== CTA BAND ====== -->
+    <section class="cta-band">
+      <div>
+        <h2 class="cta-headline">Apply now. <em>Show us what you've shipped.</em></h2>
+        <p>Submit your portfolio and a short introduction. We respond to every applicant within five business days.</p>
+      </div>
+      <div class="cta-actions">
+        <span class="pill primary">Send your portfolio &nbsp;→</span>
+        <span class="pill"><span class="label">Email</span><span class="val">clouis@nexusaihorizon.com</span></span>
+        <span class="pill"><span class="label">Web</span><span class="val">nexusaihorizon.com</span></span>
+      </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+      <div class="left">
+        <span class="seal-foot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 4 19 V 6 L 16 19 V 6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="6" r="1.6" fill="#1F3A8A"/>
+          </svg>
+        </span>
+        <span>Nexus AI Horizon · AI consulting &amp; automation</span>
+      </div>
+      <div class="tags">
+        <span>#AIEngineer</span>
+        <span>#MachineLearning</span>
+        <span>#Hiring</span>
+      </div>
+    </footer>
+
+  </article>
+
+</body>
+</html>
